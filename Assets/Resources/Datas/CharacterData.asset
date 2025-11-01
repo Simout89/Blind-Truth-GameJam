@@ -15,3 +15,4 @@ MonoBehaviour:
   <MoveSpeed>k__BackingField: 5
   <Gravity>k__BackingField: -9.81
   <SprintMultiplayer>k__BackingField: 1.5
+  <CrouchMultiplayer>k__BackingField: 0.5

@@ -24,7 +24,9 @@ namespace Скриптерсы
 
         private void HandlePerformed(InputAction.CallbackContext obj)
         {
-            _characterController.PlayerStats.MoveSpeed.AddAdditional("sprint", _characterController.CharacterControllerData.SprintMultiplayer);
+            var stat = _characterController.PlayerStats.MoveSpeed;
+            if(!stat.TryFindAdditional("crouch"))
+                stat.AddAdditional("sprint", _characterController.CharacterControllerData.SprintMultiplayer);
         }
 
         private void HandleCanceled(InputAction.CallbackContext obj)

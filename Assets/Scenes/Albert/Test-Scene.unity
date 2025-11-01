@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 390581439}
   - component: {fileID: 390581440}
   - component: {fileID: 390581441}
+  - component: {fileID: 390581443}
   - component: {fileID: 390581442}
   m_Layer: 0
   m_Name: Character
@@ -234,6 +235,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3d63cf44af435086a05724012ab00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.PlayerStats"
+--- !u!114 &390581443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390581436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8295b0880f9441da23c0e20efdfddda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.PlayerCrouch"
+  _characterController: {fileID: 390581439}
 --- !u!43 &627827289
 Mesh:
   m_ObjectHideFlags: 0

@@ -51,5 +51,15 @@ namespace Скриптерсы.Utils
             }
             multiplier = (T)Convert.ChangeType(result, typeof(T));
         }
+        
+        public bool TryFindAdditional(string name)
+        {
+            foreach (var value in additionalValues)
+            {
+                if (value.Key == name)
+                    return true;
+            }
+            return false;
+        }
     }
 }
