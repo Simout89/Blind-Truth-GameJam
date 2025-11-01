@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using Unity.Cinemachine;
 using Zenject;
+using Скриптерсы.Datas;
 using Скриптерсы.Services;
 
 namespace Скриптерсы
@@ -9,10 +10,10 @@ namespace Скриптерсы
     public class CharacterController : MonoBehaviour
     {
         [SerializeField] private UnityEngine.CharacterController _characterController;
+        [field: SerializeField] public CharacterControllerData CharacterControllerData { get; private set; }
+        [field: SerializeField] public PlayerStats PlayerStats { get; private set; }
         [SerializeField] private CinemachineCamera _virtualCamera;
-        [Inject] private IInputService _inputService;
-        [SerializeField] private float _moveSpeed = 5f;
-        [SerializeField] private float _gravity = -9.81f;
+        [Inject] public IInputService _inputService { get; private set; }
 
         private float _verticalVelocity;
         private Transform _cameraTransform;
@@ -54,7 +55,7 @@ namespace Скриптерсы
 
             // Вычисляем направление движения относительно камеры
             Vector3 move = cameraRight * h + cameraForward * v;
-            _characterController.Move(move * _moveSpeed * Time.deltaTime);
+            _characterController.Move(move * PlayerStats.MoveSpeed.Multiplier * CharacterControllerData.MoveSpeed * Time.deltaTime);
 
             // Поворачиваем персонажа в направлении движения
             if (move.magnitude > 0.1f)
@@ -69,7 +70,7 @@ namespace Скриптерсы
             if (_characterController.isGrounded && _verticalVelocity < 0)
                 _verticalVelocity = -2f;
 
-            _verticalVelocity += _gravity * Time.deltaTime;
+            _verticalVelocity += CharacterControllerData.Gravity * Time.deltaTime;
             _characterController.Move(Vector3.up * _verticalVelocity * Time.deltaTime);
         }
     }

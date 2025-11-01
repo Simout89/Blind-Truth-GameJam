@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780dd5643b4945a8981c73fd7911edc6, type: 3}
   m_Name: CharacterData
   m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.Datas.CharacterControllerData"
+  <MoveSpeed>k__BackingField: 5
+  <Gravity>k__BackingField: -9.81
+  <SprintMultiplayer>k__BackingField: 1.5

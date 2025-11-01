@@ -4,17 +4,15 @@ using Zenject;
 
 namespace Скриптерсы.Services
 {
-    public class InputService: IInputService, IDisposable, IInitializable
+    public class InputService: IInputService, IDisposable
     {
         public InputSystem_Actions InputSystemActions { get; private set; }
         
-        public void Initialize()
+        public InputService() // Убираем IInitializable
         {
             InputSystemActions = new InputSystem_Actions();
             InputSystemActions.Enable();
-            
-            Debug.Log("1234");
-            
+            Debug.Log("1234 - InputService создан");
         }
         
         public void Dispose()

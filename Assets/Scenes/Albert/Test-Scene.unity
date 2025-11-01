@@ -131,6 +131,8 @@ GameObject:
   - component: {fileID: 390581438}
   - component: {fileID: 390581439}
   - component: {fileID: 390581440}
+  - component: {fileID: 390581441}
+  - component: {fileID: 390581442}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -192,9 +194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PersonController
   _characterController: {fileID: 390581438}
+  <CharacterControllerData>k__BackingField: {fileID: 11400000, guid: 0545f432caf402b48b7bdb6ecc1be872, type: 2}
+  <PlayerStats>k__BackingField: {fileID: 390581442}
   _virtualCamera: {fileID: 1892383178}
-  _moveSpeed: 5
-  _gravity: -9.81
 --- !u!114 &390581440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +209,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fcd7457d5c43b982f72370f4fa06b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.CameraController"
+--- !u!114 &390581441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390581436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8d72fa3cc243db8c166693d0650f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.CharacterSprint"
+  _characterController: {fileID: 390581439}
+--- !u!114 &390581442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390581436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3d63cf44af435086a05724012ab00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.PlayerStats"
 --- !u!43 &627827289
 Mesh:
   m_ObjectHideFlags: 0
