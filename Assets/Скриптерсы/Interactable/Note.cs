@@ -10,9 +10,11 @@ namespace Скриптерсы.Interactable
         [SerializeField] private NoteData _noteData;
         [Inject] private NoteView _noteView;
         
-        public void Click()
+        public ClickResult Click()
         {
             _noteView.TryShowNote(_noteData);
+
+            return new ClickResult(false);
         }
 
         public override void Highlight()

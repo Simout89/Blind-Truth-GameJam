@@ -30,8 +30,13 @@ namespace Скриптерсы
         private void HandlePerformed(InputAction.CallbackContext obj)
         {
             if(!enable) return;
-            
-            _clickable?.Click();
+
+            if (_clickable != null)
+            {
+                var info = _clickable.Click();
+
+                if (info.hideClickableView) OnClickableExit?.Invoke();
+            }
         }
 
         private void HandleCanceled(InputAction.CallbackContext obj)
@@ -77,6 +82,15 @@ namespace Скриптерсы
     
     public interface IClickable
     {
-        public void Click();
+        public ClickResult Click();
+    }
+
+    public struct ClickResult
+    {
+        public bool hideClickableView;
+        public ClickResult(bool hideClickableView)
+        {
+            this.hideClickableView = hideClickableView;
+        }
     }
 }

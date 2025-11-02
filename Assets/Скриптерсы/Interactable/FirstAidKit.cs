@@ -8,11 +8,13 @@ namespace Скриптерсы.Interactable
     {
         [SerializeField] private FirstAidKitData firstAidKitData;
         [Inject] private PlayerHealth _playerHealth;
-        public void Click()
+        public ClickResult Click()
         {
             _playerHealth.Heal(firstAidKitData.HealAmount);
             
-            Destroy(gameObject);
+            Destroy(gameObject);   
+
+            return new ClickResult(true);
         }
     }
 }
