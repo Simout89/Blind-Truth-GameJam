@@ -19,6 +19,8 @@ public class WeaponCombatController : MonoBehaviour
     [SerializeField] private float fireRate = 0.5f;
     
     [Inject] private CameraController _cameraController;
+
+    public event Action OnAmmoChanged;
     
     private float TotalAmmo = 0f;
     private float AmmoCountInClip = 0f;
