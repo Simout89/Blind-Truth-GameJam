@@ -19,12 +19,12 @@ namespace Скриптерсы
         {
             // ChangeSurface();
             Debug.Log("звук");
+            ChangeSurface();
             RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_Footsteps");
         }
         
         private void Awake()
         {
-            ChangeSurface();
             stepSoundInvoker = new TimedInvoker(PlayFootStepSound, footstepInterval);
         }
         
@@ -58,11 +58,11 @@ namespace Скриптерсы
 
     public enum SurfaceType
     {
-        Dirt = 1,
-        Wood = 2,
-        Stone = 3, 
-        Grass = 4,
-        Gravel = 5
+        Dirt = 0,
+        Wood = 1,
+        Stone = 2, 
+        Grass = 3,
+        Gravel = 4
     }
     
     public class TimedInvoker
