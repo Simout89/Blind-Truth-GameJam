@@ -36,7 +36,7 @@ namespace Скриптерсы.View
 
             _canvas.alpha = 1;
             
-            _canvas.DOFade(0, 1);
+            _canvas.DOFade(0, 2);
         }
     }
 }
