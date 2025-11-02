@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c485394e-ec27-451d-9594-d4f575897bef}">
+		<property name="assetPath">
+			<value>gr_Death.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>27.336530612244896</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{342a7130-4c9c-4ac5-9447-06ae70a1ba89}</destination>
+		</relationship>
+	</object>
+</objects>
