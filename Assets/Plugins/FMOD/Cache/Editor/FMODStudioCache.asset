@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 7534888933515609563}
   - {fileID: 3421320710696005464}
   MinDistance: 1
-  MaxDistance: 45
+  MaxDistance: 25
   Length: 0
 --- !u!114 &-8470539416771913245
 MonoBehaviour:
@@ -391,7 +391,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977416595475656
+  lastModified: 638977427063298720
   FileSizes: []
   Exists: 1
 --- !u!114 &-1719565130939531344
@@ -494,7 +494,7 @@ MonoBehaviour:
   - {fileID: -2307731070035612492}
   StringsBanks:
   - {fileID: 7527393716066712367}
-  cacheTime: 638977416595557466
+  cacheTime: 638977427063298720
   cacheVersion: 131633
 --- !u!114 &315294865468917640
 MonoBehaviour:
