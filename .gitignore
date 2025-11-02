@@ -62,3 +62,4 @@ sysinfo.txt
 crashlytics-build.properties
 
 /Packages/com.hauntedpsx.render-pipelines.psx
+/fmod_editor.log
