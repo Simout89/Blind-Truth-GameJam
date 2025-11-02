@@ -394,6 +394,7 @@ MonoBehaviour:
   unityCharacterController: {fileID: 6732503736222714513}
   footstepInterval: 1
   minStepSpeed: 1
+  afkSoundInterval: 30
 --- !u!1 &153694674944848193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3263,6 +3264,7 @@ GameObject:
   - component: {fileID: 594272053720323821}
   - component: {fileID: 6830602193482732701}
   - component: {fileID: 3638309007371202591}
+  - component: {fileID: 5136691816377335844}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -3413,6 +3415,20 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &5136691816377335844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7523032486974905329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &7783679012124603021
 GameObject:
   m_ObjectHideFlags: 0
