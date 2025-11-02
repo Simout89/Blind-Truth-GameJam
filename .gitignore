@@ -69,4 +69,7 @@ crashlytics-build.properties
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 
 UserSettings/EditorUserSettings.asset
->>>>>>> 42b44a23dbb689de8ff4447066a6dff5ca9026f1
+
+fmod_editor.log
+
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt
