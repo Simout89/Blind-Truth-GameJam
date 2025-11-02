@@ -42,10 +42,34 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638976993214134954
+  lastModified: 638976920445855433
   FileSizes:
   - Name: Desktop
-    Value: 4555968
+    Value: 4485856
+  Exists: 1
+--- !u!114 &-7861242505763819229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/p_HardBreath/Stamina
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Stamina
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 2568408116
+    data2: 2326741449
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &-7140058353157006055
 MonoBehaviour:
@@ -113,10 +137,34 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638976993214144880
+  lastModified: 638976920445905397
   FileSizes:
   - Name: Desktop
-    Value: 1384
+    Value: 1422
+  Exists: 1
+--- !u!114 &-4098438616091978867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stamina
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Stamina
+  StudioPath: parameter:/Stamina
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 2568408116
+    data2: 2326741449
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &-1900352677239049712
 MonoBehaviour:
@@ -171,11 +219,12 @@ MonoBehaviour:
   - {fileID: 1151839789392935724}
   EditorParameters:
   - {fileID: 2645321928748280192}
+  - {fileID: -4098438616091978867}
   MasterBanks:
   - {fileID: -8368266062490871645}
   StringsBanks:
   - {fileID: -4185033931901549649}
-  cacheTime: 638976993214144880
+  cacheTime: 638976920445905397
   cacheVersion: 131633
 --- !u!114 &1151839789392935724
 MonoBehaviour:
@@ -269,19 +318,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
   Path: event:/SFX/InGame/Player/p_HardBreath
   Guid:
-    Data1: -1425993083
-    Data2: 1209361278
-    Data3: 1887561867
-    Data4: 325378079
+    Data1: -2103874566
+    Data2: 1323838117
+    Data3: -1260048471
+    Data4: 1427321500
   Banks:
   - {fileID: -8368266062490871645}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7861242505763819229}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 8052
 --- !u!114 &3129906424241598241
 MonoBehaviour:
   m_ObjectHideFlags: 0
