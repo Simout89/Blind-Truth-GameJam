@@ -1,6 +1,115 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8756317111889884885
+--- !u!114 &-8826523458210062105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Propses/pr_ManCry
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Propses/pr_ManCry
+  Guid:
+    Data1: 775222997
+    Data2: 1257383739
+    Data3: 2136345524
+    Data4: 286056499
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 21163
+--- !u!114 &-8359914665742242428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Propses/pr_Prayer
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Propses/pr_Prayer
+  Guid:
+    Data1: -266557276
+    Data2: 1270203509
+    Data3: -1030177359
+    Data4: -2017092604
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 97778
+--- !u!114 &-8039772564876668722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_HardBreath
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_HardBreath
+  Guid:
+    Data1: -2103874566
+    Data2: 1323838117
+    Data3: -1260048471
+    Data4: 1427321500
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4931817975695638556}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8052
+--- !u!114 &-7779351411347203674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_Reload
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_Reload
+  Guid:
+    Data1: 1358390467
+    Data2: 1253458387
+    Data3: -1705420102
+    Data4: 1975863837
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7536694446431940681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19,7 +128,7 @@ MonoBehaviour:
     Data3: -1273208440
     Data4: 389986566
   Banks:
-  - {fileID: -8368266062490871645}
+  - {fileID: -6841412856720591691}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -27,7 +136,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-8368266062490871645
+--- !u!114 &-7330233993978248218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Enemy/e_TakeDamage
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Enemy/e_TakeDamage
+  Guid:
+    Data1: 1373698705
+    Data2: 1139269891
+    Data3: -1594130527
+    Data4: -508679309
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6841412856720591691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,16 +178,187 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-<<<<<<< HEAD
-  lastModified: 638977001771566976
-=======
-  lastModified: 638977220050093500
->>>>>>> 42b44a23dbb689de8ff4447066a6dff5ca9026f1
+  lastModified: 638977026939173051
   FileSizes:
   - Name: Desktop
-    Value: 5277440
+    Value: 6827424
   Exists: 1
---- !u!114 &-7861242505763819229
+--- !u!114 &-2724161559321979449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Level1SoundScape
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/Level1SoundScape
+  Guid:
+    Data1: 1447774714
+    Data2: 1267651983
+    Data3: -169369725
+    Data4: 1634595467
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 242000
+--- !u!114 &-1927081890086159549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_TakeDamage
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_TakeDamage
+  Guid:
+    Data1: -1526030531
+    Data2: 1333376880
+    Data3: 627410309
+    Data4: -1305499360
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1090359809533909404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Propses/pr_Bus
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Propses/pr_Bus
+  Guid:
+    Data1: -1940123890
+    Data2: 1153692203
+    Data3: -1570609000
+    Data4: -768271396
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4182
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
+  EditorBanks:
+  - {fileID: 545883147021286481}
+  - {fileID: -6841412856720591691}
+  EditorEvents:
+  - {fileID: -1090359809533909404}
+  - {fileID: -1927081890086159549}
+  - {fileID: 3887092288051111287}
+  - {fileID: 2544850991233017380}
+  - {fileID: 6765062936706556494}
+  - {fileID: 61815162666065563}
+  - {fileID: -7536694446431940681}
+  - {fileID: -7330233993978248218}
+  - {fileID: -8359914665742242428}
+  - {fileID: -7779351411347203674}
+  - {fileID: 94427677899646363}
+  - {fileID: -8826523458210062105}
+  - {fileID: -2724161559321979449}
+  - {fileID: -8039772564876668722}
+  EditorParameters:
+  - {fileID: 7261906277193602704}
+  - {fileID: 848933564592446434}
+  - {fileID: 3075129776158445221}
+  MasterBanks:
+  - {fileID: -6841412856720591691}
+  StringsBanks:
+  - {fileID: 545883147021286481}
+  cacheTime: 638977026939210311
+  cacheVersion: 131633
+--- !u!114 &61815162666065563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_Fire
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_Fire
+  Guid:
+    Data1: -2121898628
+    Data2: 1149791596
+    Data3: 1356368827
+    Data4: 1550737284
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &94427677899646363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_LongAFK
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_LongAFK
+  Guid:
+    Data1: 1491593418
+    Data2: 1292072528
+    Data3: 918072237
+    Data4: 1596599610
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &234332244621405006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,34 +368,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/p_HardBreath/Stamina
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Stamina
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 2568408116
-    data2: 2326741449
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-7185516931496424535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/PlayerGroundMaterial
+  m_Name: parameter:/p_Footsteps/PlayerGroundMaterial
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
   Name: PlayerGroundMaterial
-  StudioPath: parameter:/PlayerGroundMaterial
+  StudioPath: 
   Min: 0
   Max: 4
   Default: 0
@@ -104,31 +387,7 @@ MonoBehaviour:
   - Grass
   - Gravel
   Exists: 1
---- !u!114 &-7140058353157006055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/p_Footsteps/is Crouch
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: is Crouch
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3665267398
-    data2: 2511786076
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-4185033931901549649
+--- !u!114 &545883147021286481
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,16 +402,12 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-<<<<<<< HEAD
-  lastModified: 638977001771612028
-=======
-  lastModified: 638977220050174388
->>>>>>> 42b44a23dbb689de8ff4447066a6dff5ca9026f1
+  lastModified: 638977026939210311
   FileSizes:
   - Name: Desktop
-    Value: 1548
+    Value: 1750
   Exists: 1
---- !u!114 &-4098438616091978867
+--- !u!114 &848933564592446434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,7 +431,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-3721991044587662224
+--- !u!114 &2544850991233017380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,43 +450,16 @@ MonoBehaviour:
     Data3: -738500448
     Data4: -97916526
   Banks:
-  - {fileID: -8368266062490871645}
+  - {fileID: -6841412856720591691}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2408246971076063527}
+  - {fileID: 7204310226559087569}
   MinDistance: 1
   MaxDistance: 20
   Length: 22325
---- !u!114 &-2575575354644437664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_TakeDamage
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_TakeDamage
-  Guid:
-    Data1: -1526030531
-    Data2: 1333376880
-    Data3: 627410309
-    Data4: -1305499360
-  Banks:
-  - {fileID: -8368266062490871645}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2408246971076063527
+--- !u!114 &2945154615269076459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,232 +469,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level1Ambience/Fight
+  m_Name: parameter:/p_Footsteps/is Crouch
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Fight
+  Name: is Crouch
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 1942404122
-    data2: 2124486142
-  Type: 0
+    data1: 3665267398
+    data2: 2511786076
+  Type: 1
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-1900352677239049712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_Fire
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_Fire
-  Guid:
-    Data1: -2121898628
-    Data2: 1149791596
-    Data3: 1356368827
-    Data4: 1550737284
-  Banks:
-  - {fileID: -8368266062490871645}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1283607042510115282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_PickUp
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_PickUp
-  Guid:
-    Data1: -1223367821
-    Data2: 1163731084
-    Data3: -186650975
-    Data4: 1737337450
-  Banks:
-  - {fileID: -8368266062490871645}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
-  EditorBanks:
-  - {fileID: -4185033931901549649}
-  - {fileID: -8368266062490871645}
-  EditorEvents:
-  - {fileID: 3129906424241598241}
-  - {fileID: -1900352677239049712}
-  - {fileID: -8756317111889884885}
-  - {fileID: 2211789018440315519}
-  - {fileID: 4306368429419446002}
-  - {fileID: 2941346195417914351}
-  - {fileID: 1151839789392935724}
-  - {fileID: -3721991044587662224}
-<<<<<<< HEAD
-  - {fileID: -2575575354644437664}
-  - {fileID: -1283607042510115282}
-  EditorParameters:
-  - {fileID: 2645321928748280192}
-  - {fileID: -4098438616091978867}
-  - {fileID: 2971815095922219026}
-=======
-  - {fileID: 1896251992402088917}
-  - {fileID: 1772378213898176134}
-  EditorParameters:
-  - {fileID: 2645321928748280192}
-  - {fileID: -4098438616091978867}
-  - {fileID: -7185516931496424535}
->>>>>>> 42b44a23dbb689de8ff4447066a6dff5ca9026f1
-  MasterBanks:
-  - {fileID: -8368266062490871645}
-  StringsBanks:
-  - {fileID: -4185033931901549649}
-<<<<<<< HEAD
-  cacheTime: 638977001771612028
-=======
-  cacheTime: 638977220050174388
->>>>>>> 42b44a23dbb689de8ff4447066a6dff5ca9026f1
-  cacheVersion: 131633
---- !u!114 &1151839789392935724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_LongAFK
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_LongAFK
-  Guid:
-    Data1: 1491593418
-    Data2: 1292072528
-    Data3: 918072237
-    Data4: 1596599610
-  Banks:
-  - {fileID: -8368266062490871645}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1772378213898176134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_PickUp
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_PickUp
-  Guid:
-    Data1: -1223367821
-    Data2: 1163731084
-    Data3: -186650975
-    Data4: 1737337450
-  Banks:
-  - {fileID: -8368266062490871645}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1896251992402088917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_TakeDamage
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_TakeDamage
-  Guid:
-    Data1: -1526030531
-    Data2: 1333376880
-    Data3: 627410309
-    Data4: -1305499360
-  Banks:
-  - {fileID: -8368266062490871645}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &2211789018440315519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_Reload
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_Reload
-  Guid:
-    Data1: 1358390467
-    Data2: 1253458387
-    Data3: -1705420102
-    Data4: 1975863837
-  Banks:
-  - {fileID: -8368266062490871645}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &2645321928748280192
+--- !u!114 &3075129776158445221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -490,64 +507,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &2941346195417914351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_HardBreath
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_HardBreath
-  Guid:
-    Data1: -2103874566
-    Data2: 1323838117
-    Data3: -1260048471
-    Data4: 1427321500
-  Banks:
-  - {fileID: -8368266062490871645}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -7861242505763819229}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 8052
---- !u!114 &2971815095922219026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/PlayerGroundMaterial
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: PlayerGroundMaterial
-  StudioPath: parameter:/PlayerGroundMaterial
-  Min: 0
-  Max: 4
-  Default: 0
-  ID:
-    data1: 973469381
-    data2: 623625467
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - Dirt
-  - Wood
-  - Stone
-  - Grass
-  - Gravel
-  Exists: 1
---- !u!114 &3129906424241598241
+--- !u!114 &3887092288051111287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -566,44 +526,17 @@ MonoBehaviour:
     Data3: 1487135674
     Data4: -270872958
   Banks:
-  - {fileID: -8368266062490871645}
+  - {fileID: -6841412856720591691}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -7140058353157006055}
-  - {fileID: 4324339644129093370}
+  - {fileID: 2945154615269076459}
+  - {fileID: 234332244621405006}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4306368429419446002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Level1SoundScape
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Ambience/Level1SoundScape
-  Guid:
-    Data1: 1447774714
-    Data2: 1267651983
-    Data3: -169369725
-    Data4: 1634595467
-  Banks:
-  - {fileID: -8368266062490871645}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 242000
---- !u!114 &4324339644129093370
+--- !u!114 &4931817975695638556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -613,10 +546,85 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/p_Footsteps/PlayerGroundMaterial
+  m_Name: parameter:/p_HardBreath/Stamina
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Stamina
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 2568408116
+    data2: 2326741449
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6765062936706556494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_PickUp
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_PickUp
+  Guid:
+    Data1: -1223367821
+    Data2: 1163731084
+    Data3: -186650975
+    Data4: 1737337450
+  Banks:
+  - {fileID: -6841412856720591691}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7204310226559087569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1Ambience/Fight
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Fight
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1942404122
+    data2: 2124486142
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7261906277193602704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlayerGroundMaterial
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
   Name: PlayerGroundMaterial
-  StudioPath: 
+  StudioPath: parameter:/PlayerGroundMaterial
   Min: 0
   Max: 4
   Default: 0
