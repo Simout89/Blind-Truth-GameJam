@@ -31,6 +31,11 @@ namespace Скриптерсы.Enemy
             {
                 _fsm.ChangeState<PatrolState>();
             }
+
+            if (Vector3.Distance(_enemyBase.transform.position, _enemyBase.PlayerTransform.position) <= _enemyBase.EnemyData.AttackRange)
+            {
+                _fsm.ChangeState<AttackState>();
+            }
         }
 
         public override void Exit()

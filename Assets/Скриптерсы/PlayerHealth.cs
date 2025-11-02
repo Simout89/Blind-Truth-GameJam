@@ -6,6 +6,7 @@ namespace Скриптерсы
     public class PlayerHealth: MonoBehaviour, IDamageable, IHealable
     {
         [SerializeField] private CharacterController _characterController;
+        public event Action OnHealthChanged;
         private float currentHealth;
 
         private void Awake()
@@ -16,6 +17,7 @@ namespace Скриптерсы
         public void TakeDamage(DamageInfo damageInfo)
         {
             currentHealth = Mathf.Max(currentHealth - damageInfo.Count, 0);
+            OnHealthChanged?.Invoke();
             Debug.Log($"Получил урон: {damageInfo.Count}");
             
             

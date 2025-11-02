@@ -18,6 +18,7 @@ namespace Скриптерсы.Enemy
         [HideInInspector] public int currentPoint = 0;
         [SerializeField] private TriggerDetector _triggerDetector;
         [SerializeField] private LayerMask _layerMask;
+        [SerializeField] public Transform attackZone;
         public Transform PlayerTransform { get; private set; }
 
         private Fsm _fsm;
@@ -31,6 +32,7 @@ namespace Скриптерсы.Enemy
             _fsm = new Fsm();
             _fsm.AddState(new PatrolState(_fsm, this));
             _fsm.AddState(new PursuitState(_fsm, this));
+            _fsm.AddState(new AttackState(_fsm, this));
             _fsm.ChangeState<PatrolState>();
 
             if (anchors != null && anchors.Length > 0)
@@ -129,6 +131,11 @@ namespace Скриптерсы.Enemy
             {
                 anchors = newAnchors;
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawSphere(attackZone.position, EnemyData.AttackZoneRadius);
         }
 
         public Transform GetContainer() => container;
