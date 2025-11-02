@@ -4777,6 +4777,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753873982451038418, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
+      propertyPath: passiveSwaySpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753873982451038418, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
+      propertyPath: passiveSwayAmount
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
