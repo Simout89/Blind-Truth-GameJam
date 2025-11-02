@@ -5,9 +5,14 @@ namespace Скриптерсы
 {
     public class CameraController: MonoBehaviour
     {
-        private void Awake()
+        public void Enable()
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            
+        }
+
+        public void Disable()
+        {
+            
         }
     }
 }
