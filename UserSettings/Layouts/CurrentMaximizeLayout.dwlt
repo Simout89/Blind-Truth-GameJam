@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 10037
+  controlID: 12779
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 10038
+  controlID: 12780
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 10039
+  controlID: 12781
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 10040
+  controlID: 12782
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -224,8 +224,8 @@ MonoBehaviour:
     y: 0
     width: 410.4
     height: 501.6
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 7}
   m_Panes:
   - {fileID: 7}
@@ -271,9 +271,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d2ca0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 10fbffff12fbffff
+      m_ExpandedIDs: fef8ffff10fbffff12fbffff3ccc000040cc0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -340,7 +340,7 @@ MonoBehaviour:
     m_CachedPref: 156.80005
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 51922
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -995,9 +995,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 16.222046, y: 11.468372, z: -37.683266}
+    m_Target: {x: -0.4838442, y: -1.0657434, z: -0.112322}
     speed: 2
-    m_Value: {x: 16.222046, y: 11.468372, z: -37.683266}
+    m_Value: {x: -0.4838442, y: -1.0657434, z: -0.112322}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1043,9 +1043,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.21132363, y: -0.45257628, z: 0.11141522, w: 0.8592652}
+    m_Target: {x: 0.12080716, y: -0.04167775, z: 0.005161985, w: 0.9919081}
     speed: 2
-    m_Value: {x: 0.21129902, y: -0.4525236, z: 0.11140225, w: 0.85916513}
+    m_Value: {x: 0.120792694, y: -0.04167276, z: 0.0051613664, w: 0.9917893}
   m_Size:
     m_Target: 4.7618756
     speed: 2
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 10131
+  controlID: 12817
   draggingID: 0
 --- !u!114 &15
 MonoBehaviour:
@@ -1380,8 +1380,8 @@ MonoBehaviour:
     y: 0
     width: 848
     height: 488.80002
-  m_MinSize: {x: 381, y: 626}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 380, y: 600}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 16}
@@ -1491,7 +1491,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 3e0a0100
     m_LastClickedID: 68158
-    m_ExpandedIDs: 0000000050d1000052d1000054d1000056d100004009010000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000050d1000052d1000054d1000056d1000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1618,7 +1618,7 @@ MonoBehaviour:
   previewArea: {}
   treeViewState:
     noSearchExpandState: 
-    selectedObject: {fileID: 2941346195417914351, guid: 0686346aa346d6040a406340a783dd84, type: 2}
+    selectedObject: {fileID: 0}
     itemPaths:
     - folder:event:/
     - folder:snapshot:/
@@ -1644,7 +1644,8 @@ MonoBehaviour:
     - event:/Music/Level1Ambience
     - event:/SFX/InGame/Player/p_PickUp
     - event:/SFX/InGame/Player/p_TakeDamage
-    itemIDs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000017000000
+    - parameter:/PlayerGroundMaterial
+    itemIDs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000
     typeFilter: 7
     dragEnabled: 1
 --- !u!114 &19
@@ -2174,7 +2175,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -42436
+  m_LastSelectedObjectID: 52288
 --- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52

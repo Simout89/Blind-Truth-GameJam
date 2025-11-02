@@ -2,6 +2,7 @@
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Скриптерсы
 {
@@ -10,10 +11,12 @@ namespace Скриптерсы
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private UnityEngine.CharacterController unityCharacterController;
         private TimedInvoker stepSoundInvoker;
+        private TimedInvoker longAfkInvoker;
         
         [Header("Settings")]
         [SerializeField] private float footstepInterval = 1f;
         [SerializeField] private float minStepSpeed = 1f;
+        [SerializeField] private float afkSoundInterval = 30;
         
         private void PlayFootStepSound()
         {
@@ -26,6 +29,15 @@ namespace Скриптерсы
         private void Awake()
         {
             stepSoundInvoker = new TimedInvoker(PlayFootStepSound, footstepInterval);
+            longAfkInvoker = new TimedInvoker(TryPlaySoundAfk, afkSoundInterval);
+        }
+
+        private void TryPlaySoundAfk()
+        {
+            if (Random.Range(0, 10) == 0)
+            {
+                RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_LongAFK");
+            }
         }
         
         private void Update()
@@ -38,11 +50,17 @@ namespace Скриптерсы
             if (horizontalSpeed < 0.1)
             {
                 stepSoundInvoker.SetInterval(footstepInterval);
+                longAfkInvoker.SetInterval(afkSoundInterval);
             }
         
             if (horizontalSpeed >= minStepSpeed && unityCharacterController.isGrounded)
             {
                 stepSoundInvoker.Tick();
+            }
+
+            if (horizontalSpeed == 0)
+            {
+                longAfkInvoker.Tick();
             }
         }
 
