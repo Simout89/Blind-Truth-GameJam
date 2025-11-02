@@ -392,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.PlayerSounds"
   _characterController: {fileID: 336074341064953239}
   unityCharacterController: {fileID: 6732503736222714513}
-  footstepInterval: 1
+  footstepInterval: 0.4
   minStepSpeed: 1
   afkSoundInterval: 30
 --- !u!1 &153694674944848193
