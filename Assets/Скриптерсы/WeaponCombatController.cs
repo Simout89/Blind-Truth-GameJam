@@ -65,7 +65,7 @@ public class WeaponCombatController : MonoBehaviour
         {
             Debug.Log(hit.collider.name);
 
-            var damageInfo = new DamageInfo(_characterController.CharacterControllerData.Damage, "player");
+            var damageInfo = new DamageInfo(_characterController.CharacterControllerData.Damage, "player", transform);
             
             damageable.TakeDamage(damageInfo);
         }

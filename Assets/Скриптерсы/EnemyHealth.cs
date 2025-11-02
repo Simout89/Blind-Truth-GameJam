@@ -6,11 +6,11 @@ namespace Скриптерсы
 {
     public class EnemyHealth: MonoBehaviour, IDamageable
     {
-        [SerializeField] private EnemyData _enemyData;
         [SerializeField] private BodyPart[] _bodyParts;
         private float currentHealth;
+        public event Action<DamageInfo> OnTakeDamage;
 
-        private void Awake()
+        public void Init(EnemyData _enemyData)
         {
             currentHealth = _enemyData.Health;
         }
@@ -44,11 +44,15 @@ namespace Скриптерсы
 
         public void TakeDamage(DamageInfo damageInfo)
         {
+            OnTakeDamage?.Invoke(damageInfo);
+            
             currentHealth = Mathf.Max(currentHealth - damageInfo.Count, 0);
 
             if (currentHealth <= 0)
             {
                 Debug.Log("Смерть");
+                
+                Destroy(gameObject);
             }
         }
     }
