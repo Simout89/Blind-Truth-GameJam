@@ -62,3 +62,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 /Packages/com.hauntedpsx.render-pipelines.psx
+
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+
+UserSettings/EditorUserSettings.asset
