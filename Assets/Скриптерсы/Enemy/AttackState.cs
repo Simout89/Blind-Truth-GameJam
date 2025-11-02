@@ -18,6 +18,8 @@ namespace Скриптерсы.Enemy
         public override void Enter()
         {
             base.Enter();
+            
+            _enemyBase.Animator.SetTrigger("Attack");
 
             _enemyBase.navMeshAgent.destination = _enemyBase.transform.position;
             _enemyBase.navMeshAgent.isStopped = true;
@@ -38,6 +40,8 @@ namespace Скриптерсы.Enemy
 
         public IEnumerator Attack()
         {
+            _enemyBase.transform.LookAt(_enemyBase.PlayerTransform);
+            
             yield return new WaitForSeconds(_enemyBase.EnemyData.DelayBeforeAttack);
             
             Collider[] hitColliders = Physics.OverlapSphere(_enemyBase.attackZone.position, _enemyBase.EnemyData.AttackZoneRadius);

@@ -19,6 +19,7 @@ namespace Скриптерсы.Enemy
         [SerializeField] private TriggerDetector _triggerDetector;
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] public Transform attackZone;
+        [SerializeField] public Animator Animator;
         public Transform PlayerTransform { get; private set; }
 
         private Fsm _fsm;
@@ -28,11 +29,13 @@ namespace Скриптерсы.Enemy
         private void Awake()
         {
             EnemyHealth.Init(EnemyData);
+            navMeshAgent.speed = EnemyData.DefaultSpeed;
             
             _fsm = new Fsm();
             _fsm.AddState(new PatrolState(_fsm, this));
             _fsm.AddState(new PursuitState(_fsm, this));
             _fsm.AddState(new AttackState(_fsm, this));
+            _fsm.AddState(new DeathState(_fsm, this));
             _fsm.ChangeState<PatrolState>();
 
             if (anchors != null && anchors.Length > 0)
@@ -42,6 +45,7 @@ namespace Скриптерсы.Enemy
         private void OnEnable()
         {
             EnemyHealth.OnTakeDamage += HandleTakeDamage;
+            EnemyHealth.OnDeath += HandleDeath;
 
             _triggerDetector.onTriggerEntered += HandleEntered;
             _triggerDetector.onTriggerExited += HandleExited;
@@ -50,9 +54,16 @@ namespace Скриптерсы.Enemy
         private void OnDisable()
         {
             EnemyHealth.OnTakeDamage -= HandleTakeDamage;
+            EnemyHealth.OnDeath -= HandleDeath;
+
             
             _triggerDetector.onTriggerEntered -= HandleEntered;
             _triggerDetector.onTriggerExited -= HandleExited;
+        }
+
+        private void HandleDeath()
+        {
+            _fsm.ChangeState<DeathState>();
         }
 
         private void HandleEntered(Collider obj)

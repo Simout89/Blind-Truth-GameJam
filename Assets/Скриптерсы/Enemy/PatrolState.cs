@@ -15,6 +15,7 @@ namespace Скриптерсы.Enemy
         public override void Enter()
         {
             base.Enter();
+            enemyBase.navMeshAgent.speed = enemyBase.EnemyData.DefaultSpeed;
             enemyBase.navMeshAgent.destination = enemyBase.anchors[enemyBase.currentPoint].position;
         }
 

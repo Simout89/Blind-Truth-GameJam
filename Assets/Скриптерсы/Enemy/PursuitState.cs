@@ -16,6 +16,9 @@ namespace Скриптерсы.Enemy
         public override void Enter()
         {
             base.Enter();
+            
+            _enemyBase.Animator.SetBool("Pursuit", true);
+            _enemyBase.navMeshAgent.speed = _enemyBase.EnemyData.PursuitSpeed;
 
             _enemyBase.navMeshAgent.destination = _enemyBase.PlayerTransform.position;
         }
@@ -41,7 +44,8 @@ namespace Скриптерсы.Enemy
         public override void Exit()
         {
             base.Exit();
-            
+            _enemyBase.Animator.SetBool("Pursuit", false);
+
         }
     }
 }

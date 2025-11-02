@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: TestEnemy
   m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.Datas.EnemyData"
   <Health>k__BackingField: 3
-  <MaxRangePursuit>k__BackingField: 10
-  <AttackRange>k__BackingField: 1.5
-  <DelayBeforeAttack>k__BackingField: 1
+  <MaxRangePursuit>k__BackingField: 30
+  <DefaultSpeed>k__BackingField: 2.75
+  <PursuitSpeed>k__BackingField: 9
+  <AttackRange>k__BackingField: 1.75
+  <DelayBeforeAttack>k__BackingField: 0.6
+  <DelayAfterAttack>k__BackingField: 1
   <Damage>k__BackingField: 3
-  <AttackZoneRadius>k__BackingField: 0.58
+  <AttackZoneRadius>k__BackingField: 0.71
