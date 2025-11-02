@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &-8837849201037784345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_NoAmmo
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_NoAmmo
+  Guid:
+    Data1: 913899346
+    Data2: 1323085366
+    Data3: -674390349
+    Data4: -588239799
+  Banks:
+  - {fileID: -2307731070035612492}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8513715963636522097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +337,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977095402434503
+  lastModified: 638977142549882037
   FileSizes: []
   Exists: 1
 --- !u!114 &-1719565130939531344
@@ -367,6 +394,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-40751110805453164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_Heal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_Heal
+  Guid:
+    Data1: -464179103
+    Data2: 1127112626
+    Data3: -384823893
+    Data4: -1048381992
+  Banks:
+  - {fileID: -2307731070035612492}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +454,8 @@ MonoBehaviour:
   - {fileID: -2922830820913859591}
   - {fileID: 8577856909491121377}
   - {fileID: 8905398444110062958}
+  - {fileID: -8837849201037784345}
+  - {fileID: -40751110805453164}
   EditorParameters:
   - {fileID: -3608105925200930205}
   - {fileID: 7930877211069065899}
@@ -408,7 +464,7 @@ MonoBehaviour:
   - {fileID: -2307731070035612492}
   StringsBanks:
   - {fileID: 7527393716066712367}
-  cacheTime: 638977095402494464
+  cacheTime: 638977142549992282
   cacheVersion: 131633
 --- !u!114 &1582833717380294289
 MonoBehaviour:
@@ -608,10 +664,10 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977095402494464
+  lastModified: 638977142549992282
   FileSizes:
   - Name: 
-    Value: 1926
+    Value: 2008
   Exists: 1
 --- !u!114 &7534888933515609563
 MonoBehaviour:
