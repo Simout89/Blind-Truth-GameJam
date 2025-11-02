@@ -46,11 +46,13 @@ namespace Скриптерсы
     {
         public float Count;
         public readonly string DamageDealerName;
+        public Transform Transform;
 
-        public DamageInfo(float count, string damageDealerName)
+        public DamageInfo(float count, string damageDealerName, Transform transform)
         {
             Count = count;
             DamageDealerName = damageDealerName;
+            Transform = transform;
         }
     }
 }

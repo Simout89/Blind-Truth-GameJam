@@ -33,7 +33,6 @@ namespace Скриптерсы
         private void Update()
         {
             Move();
-            Gravity();
         }
 
         private void Move()
@@ -55,7 +54,7 @@ namespace Скриптерсы
 
             // Вычисляем направление движения относительно камеры
             Vector3 move = cameraRight * h + cameraForward * v;
-            _characterController.Move(move * PlayerStats.MoveSpeed.Multiplier * CharacterControllerData.MoveSpeed * Time.deltaTime);
+            _characterController.Move(move * PlayerStats.MoveSpeed.Multiplier * CharacterControllerData.MoveSpeed * Time.deltaTime + Gravity());
 
             // Поворачиваем персонажа в направлении движения
             if (move.magnitude > 0.1f)
@@ -65,13 +64,13 @@ namespace Скриптерсы
             }
         }
 
-        private void Gravity()
+        private Vector3 Gravity()
         {
             if (_characterController.isGrounded && _verticalVelocity < 0)
                 _verticalVelocity = -2f;
 
             _verticalVelocity += CharacterControllerData.Gravity * Time.deltaTime;
-            _characterController.Move(Vector3.up * _verticalVelocity * Time.deltaTime);
+            return Vector3.up * _verticalVelocity * Time.deltaTime;
         }
     }
 }
