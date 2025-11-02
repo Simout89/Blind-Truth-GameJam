@@ -10,6 +10,7 @@ namespace Скриптерсы.Datas
         [field: Header("Weapon")]
         [field: SerializeField] public float Damage { get; private set; } = 1;
         [field: SerializeField] public float MaxAmmoInClip { get; private set; } = 7;
+        [field: SerializeField] public float DelayBetweenShots { get; private set; } = 1f;
         [field: Header("Move")]
         [field: SerializeField] public float MoveSpeed { get; private set; } = 5f;
         [field: SerializeField] public float Gravity { get; private set; } = -9.81f;
