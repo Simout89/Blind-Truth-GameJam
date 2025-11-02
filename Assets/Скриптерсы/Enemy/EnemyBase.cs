@@ -51,7 +51,7 @@ namespace Скриптерсы.Enemy
         private void PlayStepSound()
         {
             if(EnemyData.FootStepSound != "")
-                RuntimeManager.PlayOneShot(EnemyData.FootStepSound);
+                RuntimeManager.PlayOneShot(EnemyData.FootStepSound, transform.position);
         }
 
         private void OnEnable()
@@ -99,7 +99,7 @@ namespace Скриптерсы.Enemy
         private void HandleTakeDamage(DamageInfo damageInfo)
         {
             if(EnemyData.TakeDamageSound != "")
-                RuntimeManager.PlayOneShot(EnemyData.TakeDamageSound);
+                RuntimeManager.PlayOneShot(EnemyData.TakeDamageSound, transform.position);
             
             PlayerTransform = damageInfo.Transform;
             if (_fsm.CurrentState.GetType() == typeof(PatrolState))

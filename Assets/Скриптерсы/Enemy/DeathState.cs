@@ -20,7 +20,7 @@ namespace Скриптерсы.Enemy
             _enemyBase.StopAllCoroutines();
             
             if(_enemyBase.EnemyData.DeathSound != "")
-                RuntimeManager.PlayOneShot(_enemyBase.EnemyData.DeathSound);
+                RuntimeManager.PlayOneShot(_enemyBase.EnemyData.DeathSound, _enemyBase.transform.position);
 
             _enemyBase.GetComponent<Collider>().enabled = false;
             _enemyBase.navMeshAgent.enabled = false;

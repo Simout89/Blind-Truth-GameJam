@@ -46,7 +46,7 @@ namespace Скриптерсы.Enemy
             yield return new WaitForSeconds(_enemyBase.EnemyData.DelayBeforeAttack);
             
             if(_enemyBase.EnemyData.AttackSound != "")
-                RuntimeManager.PlayOneShot(_enemyBase.EnemyData.AttackSound);
+                RuntimeManager.PlayOneShot(_enemyBase.EnemyData.AttackSound, _enemyBase.transform.position);
             
             Collider[] hitColliders = Physics.OverlapSphere(_enemyBase.attackZone.position, _enemyBase.EnemyData.AttackZoneRadius);
             foreach (var VARIABLE in hitColliders)
