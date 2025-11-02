@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 34622
+  controlID: 36349
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 34623
+  controlID: 36350
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 34624
+  controlID: 36351
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 34625
+  controlID: 36352
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -366,8 +366,8 @@ MonoBehaviour:
     y: 0
     width: 935.2001
     height: 536
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -981,9 +981,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 7.775135, y: -5.9493985, z: -15.580063}
+    m_Target: {x: -3.8732312, y: -3.040022, z: -13.227594}
     speed: 2
-    m_Value: {x: 7.775135, y: -5.9493985, z: -15.580063}
+    m_Value: {x: -3.8732312, y: -3.040022, z: -13.227594}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1029,9 +1029,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.410204, y: 0.2750071, z: -0.1311864, w: 0.85967714}
+    m_Target: {x: 0.3364406, y: -0.15385634, z: 0.05585038, w: 0.9274547}
     speed: 2
-    m_Value: {x: 0.41017303, y: 0.27498636, z: -0.1311765, w: 0.8596123}
+    m_Value: {x: -0.33644062, y: 0.15385634, z: -0.05585038, w: -0.9274547}
   m_Size:
     m_Target: 10
     speed: 2
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 34650
+  controlID: 36375
   draggingID: 0
 --- !u!114 &15
 MonoBehaviour:
@@ -2071,7 +2071,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -108000
+  m_LastSelectedObjectID: -198912
 --- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52
