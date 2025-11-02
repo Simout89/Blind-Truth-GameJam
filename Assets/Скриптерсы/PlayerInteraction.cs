@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Скриптерсы.Datas;
 
 namespace Скриптерсы
 {
     public class PlayerInteraction : MonoBehaviour
     {
         [SerializeField] private CharacterController _characterController;
-
         public event Action OnClickableEnter;
         public event Action OnClickableExit;
 
+        private List<KeyItemData> _keyItemDatas = new List<KeyItemData>();
+        public List<KeyItemData> KeyItemDatas => _keyItemDatas;
         private readonly List<IClickable> _clickables = new List<IClickable>();
         private bool enable = true;
 
@@ -41,10 +43,16 @@ namespace Скриптерсы
             if (clickable == null) return; // ещё одна защита
 
             var info = clickable.Click();
-            RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_PickUp");
+            if(info.playPickUpSound)
+                RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_PickUp");
 
             if (info.hideClickableView)
                 OnClickableExit?.Invoke();
+        }
+
+        public void AddKey(KeyItemData keyItemData)
+        {
+            _keyItemDatas.Add(keyItemData);
         }
 
         private void HandleCanceled(InputAction.CallbackContext obj) { }
@@ -94,9 +102,11 @@ namespace Скриптерсы
     public struct ClickResult
     {
         public bool hideClickableView;
-        public ClickResult(bool hideClickableView)
+        public bool playPickUpSound;
+        public ClickResult(bool hideClickableView, bool playPickUpSound = true)
         {
             this.hideClickableView = hideClickableView;
+            this.playPickUpSound = playPickUpSound;
         }
     }
 }

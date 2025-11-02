@@ -1,0 +1,10 @@
+﻿using UnityEngine;
+
+namespace Скриптерсы.Datas
+{
+    [CreateAssetMenu(menuName = "Datas/KeyItemData")]
+    public class KeyItemData: ScriptableObject
+    {
+        [field: SerializeField] public string Name { get; private set; } = "www";
+    }
+}
