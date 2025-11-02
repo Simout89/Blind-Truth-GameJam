@@ -229,10 +229,8 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977051956222301
-  FileSizes:
-  - Name: Desktop
-    Value: 6827424
+  lastModified: 638977058471268419
+  FileSizes: []
   Exists: 1
 --- !u!114 &-278309182541194800
 MonoBehaviour:
@@ -326,7 +324,7 @@ MonoBehaviour:
   - {fileID: -2307731070035612492}
   StringsBanks:
   - {fileID: 7527393716066712367}
-  cacheTime: 638977051956272264
+  cacheTime: 638977058471318389
   cacheVersion: 131633
 --- !u!114 &1133969601899243361
 MonoBehaviour:
@@ -461,7 +459,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 60
   Length: 4182
 --- !u!114 &2875068867820040748
 MonoBehaviour:
@@ -539,7 +537,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 15
   Length: 97778
 --- !u!114 &4581893655353115187
 MonoBehaviour:
@@ -594,7 +592,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 15
   Length: 21163
 --- !u!114 &7527393716066712367
 MonoBehaviour:
@@ -611,9 +609,9 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977051956272264
+  lastModified: 638977058471318389
   FileSizes:
-  - Name: Desktop
+  - Name: 
     Value: 1750
   Exists: 1
 --- !u!114 &8538917245813507082
