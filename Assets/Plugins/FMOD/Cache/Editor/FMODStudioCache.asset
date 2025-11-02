@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977220050093500
+  lastModified: 638977247293143314
   FileSizes:
   - Name: Desktop
     Value: 5277440
@@ -139,7 +139,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977220050174388
+  lastModified: 638977247293153305
   FileSizes:
   - Name: Desktop
     Value: 1548
@@ -281,7 +281,7 @@ MonoBehaviour:
   - {fileID: -8368266062490871645}
   StringsBanks:
   - {fileID: -4185033931901549649}
-  cacheTime: 638977220050174388
+  cacheTime: 638977247293153305
   cacheVersion: 131633
 --- !u!114 &1151839789392935724
 MonoBehaviour:
