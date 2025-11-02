@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e4e5e9f4-1650-4a44-a9e2-5832ddc04109}">
+		<property name="assetPath">
+			<value>Vocal_Woman_Beated_3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.65766439909297048</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{342a7130-4c9c-4ac5-9447-06ae70a1ba89}</destination>
+		</relationship>
+	</object>
+</objects>
