@@ -288,6 +288,8 @@ MonoBehaviour:
     m_Bits: 55
   attackZone: {fileID: 6485429618702462117}
   Animator: {fileID: 7067229457723950678}
+  footstepInterval: 0.3
+  minStepSpeed: 1
 --- !u!195 &578413270503058668
 NavMeshAgent:
   m_ObjectHideFlags: 0

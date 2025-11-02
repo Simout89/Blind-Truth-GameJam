@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using FMODUnity;
 using UnityEngine;
 
 namespace Скриптерсы.Enemy
@@ -43,6 +44,9 @@ namespace Скриптерсы.Enemy
             _enemyBase.transform.LookAt(_enemyBase.PlayerTransform);
             
             yield return new WaitForSeconds(_enemyBase.EnemyData.DelayBeforeAttack);
+            
+            if(_enemyBase.EnemyData.AttackSound != "")
+                RuntimeManager.PlayOneShot(_enemyBase.EnemyData.AttackSound);
             
             Collider[] hitColliders = Physics.OverlapSphere(_enemyBase.attackZone.position, _enemyBase.EnemyData.AttackZoneRadius);
             foreach (var VARIABLE in hitColliders)

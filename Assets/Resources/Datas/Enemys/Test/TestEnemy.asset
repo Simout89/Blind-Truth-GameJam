@@ -21,3 +21,7 @@ MonoBehaviour:
   <DelayAfterAttack>k__BackingField: 1
   <Damage>k__BackingField: 3
   <AttackZoneRadius>k__BackingField: 0.71
+  <AttackSound>k__BackingField: event:/SFX/InGame/Enemy/e_Attack
+  <DeathSound>k__BackingField: event:/SFX/InGame/Enemy/e_Death
+  <FootStepSound>k__BackingField: event:/SFX/InGame/Enemy/e_Footsteps
+  <TakeDamageSound>k__BackingField: event:/SFX/InGame/Enemy/e_TakeDamage

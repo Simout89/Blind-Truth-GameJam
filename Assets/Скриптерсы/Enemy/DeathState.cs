@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FMODUnity;
+using UnityEngine;
 
 namespace Скриптерсы.Enemy
 {
@@ -17,6 +18,9 @@ namespace Скриптерсы.Enemy
             _enemyBase.navMeshAgent.destination = _enemyBase.transform.position;
             _enemyBase.navMeshAgent.isStopped = true;
             _enemyBase.StopAllCoroutines();
+            
+            if(_enemyBase.EnemyData.DeathSound != "")
+                RuntimeManager.PlayOneShot(_enemyBase.EnemyData.DeathSound);
 
             _enemyBase.GetComponent<Collider>().enabled = false;
             _enemyBase.navMeshAgent.enabled = false;

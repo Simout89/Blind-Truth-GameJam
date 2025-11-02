@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.AI;
 using Скриптерсы.Datas;
@@ -20,6 +21,9 @@ namespace Скриптерсы.Enemy
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] public Transform attackZone;
         [SerializeField] public Animator Animator;
+        [SerializeField] private float footstepInterval = 0.3f;
+        [SerializeField] private float minStepSpeed = 1f;
+        private TimedInvoker stepSoundInvoker;
         public Transform PlayerTransform { get; private set; }
 
         private Fsm _fsm;
@@ -30,6 +34,8 @@ namespace Скриптерсы.Enemy
         {
             EnemyHealth.Init(EnemyData);
             navMeshAgent.speed = EnemyData.DefaultSpeed;
+
+            stepSoundInvoker = new TimedInvoker(PlayStepSound, footstepInterval);
             
             _fsm = new Fsm();
             _fsm.AddState(new PatrolState(_fsm, this));
@@ -40,6 +46,12 @@ namespace Скриптерсы.Enemy
 
             if (anchors != null && anchors.Length > 0)
                 transform.position = anchors[0].position;
+        }
+
+        private void PlayStepSound()
+        {
+            if(EnemyData.FootStepSound != "")
+                RuntimeManager.PlayOneShot(EnemyData.FootStepSound);
         }
 
         private void OnEnable()
@@ -86,6 +98,9 @@ namespace Скриптерсы.Enemy
 
         private void HandleTakeDamage(DamageInfo damageInfo)
         {
+            if(EnemyData.TakeDamageSound != "")
+                RuntimeManager.PlayOneShot(EnemyData.TakeDamageSound);
+            
             PlayerTransform = damageInfo.Transform;
             if (_fsm.CurrentState.GetType() == typeof(PatrolState))
             {
@@ -95,6 +110,17 @@ namespace Скриптерсы.Enemy
 
         private void Update()
         {
+            if (navMeshAgent.velocity.magnitude > EnemyData.PursuitSpeed / 2)
+            {
+                stepSoundInvoker.SetInterval(footstepInterval / 3);
+                stepSoundInvoker.Tick();
+            }
+            else if (navMeshAgent.velocity.magnitude > 1f)
+            {
+                stepSoundInvoker.SetInterval(footstepInterval);
+                stepSoundInvoker.Tick();
+            }
+            
             _fsm.Update();
         }
 
