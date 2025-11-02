@@ -7,8 +7,10 @@ using CharacterController = Скриптерсы.CharacterController;
 public class WeaponCombatController : MonoBehaviour
 {
     [SerializeField] private CharacterController _characterController;
-    
+    [SerializeField] private LayerMask _layerMask;
     [SerializeField] private Camera camera;
+    private float TotalAmmo = 0f;
+    private float AmmoCountInClip = 0f;
 
     private void OnEnable()
     {
@@ -30,7 +32,7 @@ public class WeaponCombatController : MonoBehaviour
         Vector3 screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
         Ray ray = camera.ScreenPointToRay(screenCenter);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 100, ~0, QueryTriggerInteraction.Ignore) && hit.collider.TryGetComponent(out IDamageable damageable))
+        if (Physics.Raycast(ray, out RaycastHit hit, 100, _layerMask, QueryTriggerInteraction.Ignore) && hit.collider.TryGetComponent(out IDamageable damageable))
         {
             Debug.Log(hit.collider.name);
 
