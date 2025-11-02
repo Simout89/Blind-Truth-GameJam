@@ -25,9 +25,17 @@ namespace Скриптерсы.View
             _canvas.alpha = 0;
         }
 
-        private void HandleChanged()
+        private void HandleChanged(float n)
         {
-            DamageEffect();
+
+            if (n < 0)
+            {
+                DamageEffect();
+            }
+            else
+            {
+                _canvas.DOFade(0, 2);
+            }
         }
         
         private void DamageEffect()
@@ -35,8 +43,11 @@ namespace Скриптерсы.View
             _canvas.DOComplete();
 
             _canvas.alpha = 1;
-            
-            _canvas.DOFade(0, 2);
+
+            if (_playerHealth.CurrentHealth >= _playerHealth._characterController.CharacterControllerData.Health / 3)
+            {
+                _canvas.DOFade(0, 2);
+            }
         }
     }
 }

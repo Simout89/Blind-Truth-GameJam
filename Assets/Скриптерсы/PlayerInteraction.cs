@@ -1,20 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Скриптерсы
 {
-    public class PlayerInteraction: MonoBehaviour
+    public class PlayerInteraction : MonoBehaviour
     {
         [SerializeField] private CharacterController _characterController;
 
         public event Action OnClickableEnter;
         public event Action OnClickableExit;
 
-        private IClickable _clickable;
-
+        private readonly List<IClickable> _clickables = new List<IClickable>();
         private bool enable = true;
-        
+
         private void OnEnable()
         {
             _characterController._inputService.InputSystemActions.Player.Interact.performed += HandlePerformed;
@@ -29,57 +30,62 @@ namespace Скриптерсы
 
         private void HandlePerformed(InputAction.CallbackContext obj)
         {
-            if(!enable) return;
+            if (!enable) return;
 
-            if (_clickable != null)
-            {
-                var info = _clickable.Click();
+            // Чистим список от уничтоженных объектов
+            _clickables.RemoveAll(c => c == null || ((MonoBehaviour)c) == null);
 
-                if (info.hideClickableView) OnClickableExit?.Invoke();
-            }
+            if (_clickables.Count == 0) return;
+
+            var clickable = _clickables[0];
+            if (clickable == null) return; // ещё одна защита
+
+            var info = clickable.Click();
+            RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_PickUp");
+
+            if (info.hideClickableView)
+                OnClickableExit?.Invoke();
         }
 
-        private void HandleCanceled(InputAction.CallbackContext obj)
-        {
-            
-        }
+        private void HandleCanceled(InputAction.CallbackContext obj) { }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.TryGetComponent<IHighlightable>(out var h))
+            if (other.TryGetComponent<IHighlightable>(out var highlightable))
             {
-                h.Highlight();
+                highlightable.Highlight();
                 OnClickableEnter?.Invoke();
             }
 
-            if (other.gameObject.TryGetComponent<IClickable>(out var c)) _clickable = c;
-            
-            
-            Debug.Log(other.name);
+            if (other.TryGetComponent<IClickable>(out var clickable))
+            {
+                if (!_clickables.Contains(clickable))
+                    _clickables.Add(clickable);
+            }
+
+            Debug.Log($"Entered: {other.name}");
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.gameObject.TryGetComponent<IHighlightable>(out var h))
+            if (other.TryGetComponent<IHighlightable>(out var highlightable))
             {
-                h.RemoveHighlight(); 
+                highlightable.RemoveHighlight();
                 OnClickableExit?.Invoke();
             }
-            
-            if (other.gameObject.TryGetComponent<IClickable>(out var c)) _clickable = null;
+
+            if (other.TryGetComponent<IClickable>(out var clickable))
+            {
+                _clickables.Remove(clickable);
+            }
+
+            Debug.Log($"Exited: {other.name}");
         }
 
-        public void Enable()
-        {
-            enable = true;
-        }
-
-        public void Disable()
-        {
-            enable = false;
-        }
+        public void Enable() => enable = true;
+        public void Disable() => enable = false;
     }
-    
+
     public interface IClickable
     {
         public ClickResult Click();

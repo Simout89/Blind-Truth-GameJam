@@ -1,13 +1,15 @@
 ﻿using System;
+using FMODUnity;
 using UnityEngine;
 
 namespace Скриптерсы
 {
     public class PlayerHealth: MonoBehaviour, IDamageable, IHealable
     {
-        [SerializeField] private CharacterController _characterController;
-        public event Action OnHealthChanged;
+        [field: SerializeField] public CharacterController _characterController { get; private set; }
+        public event Action<float> OnHealthChanged;
         private float currentHealth;
+        public float CurrentHealth => currentHealth;
 
         private void Awake()
         {
@@ -17,7 +19,9 @@ namespace Скриптерсы
         public void TakeDamage(DamageInfo damageInfo)
         {
             currentHealth = Mathf.Max(currentHealth - damageInfo.Count, 0);
-            OnHealthChanged?.Invoke();
+            OnHealthChanged?.Invoke(-damageInfo.Count);
+            RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_TakeDamage");
+
             Debug.Log($"Получил урон: {damageInfo.Count}");
             
             
@@ -29,8 +33,10 @@ namespace Скриптерсы
 
         public void Heal(float amount)
         {
-            currentHealth = Mathf.Min(currentHealth += amount, _characterController.CharacterControllerData.Health);
-            Debug.Log($"Захилился: {amount}");
+            currentHealth = Mathf.Min(currentHealth + amount, _characterController.CharacterControllerData.Health);
+            OnHealthChanged?.Invoke(amount);
+
+            Debug.Log($"Захилился: {currentHealth}");
         }
     }
 

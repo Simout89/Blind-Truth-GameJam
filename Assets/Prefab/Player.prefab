@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b9b9db2f2b40b197fcfa3cb84dad0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.PlayerHealth"
-  _characterController: {fileID: 336074341064953239}
+  <_characterController>k__BackingField: {fileID: 336074341064953239}
 --- !u!114 &3763255126506295131
 MonoBehaviour:
   m_ObjectHideFlags: 0

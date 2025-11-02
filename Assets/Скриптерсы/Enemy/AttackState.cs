@@ -43,12 +43,17 @@ namespace Скриптерсы.Enemy
             Collider[] hitColliders = Physics.OverlapSphere(_enemyBase.attackZone.position, _enemyBase.EnemyData.AttackZoneRadius);
             foreach (var VARIABLE in hitColliders)
             {
+                if(VARIABLE.isTrigger)
+                    continue;
+                
                 if (VARIABLE.GetComponent<CharacterController>() &&
                     VARIABLE.TryGetComponent(out IDamageable damageable))
                 {
                     damageable.TakeDamage(new DamageInfo(_enemyBase.EnemyData.Damage, "enemy", _enemyBase.transform));
                 }
             }
+            
+            yield return new WaitForSeconds(_enemyBase.EnemyData.DelayAfterAttack); 
             
             _enemyBase.navMeshAgent.isStopped = false;
             _fsm.ChangeState<PursuitState>();
