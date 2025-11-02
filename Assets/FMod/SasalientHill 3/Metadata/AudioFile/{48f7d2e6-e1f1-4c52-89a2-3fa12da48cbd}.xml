@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{48f7d2e6-e1f1-4c52-89a2-3fa12da48cbd}">
+		<property name="assetPath">
+			<value>HitToFace04.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.49737500000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{342a7130-4c9c-4ac5-9447-06ae70a1ba89}</destination>
+		</relationship>
+	</object>
+</objects>
