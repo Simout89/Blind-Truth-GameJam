@@ -11,6 +11,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<GameStateManager>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<CameraController>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerInteraction>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerHealth>().FromComponentsInHierarchy().AsSingle();
 
         }
     }
