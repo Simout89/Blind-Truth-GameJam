@@ -1405,7 +1405,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1656284622}
+  m_Mesh: {fileID: 872295425}
 --- !u!33 &403429986
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -1760,7 +1760,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1877020539}
+  m_Mesh: {fileID: 297611775}
 --- !u!33 &487899406
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -7398,6 +7398,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1700318807307549014, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
+      propertyPath: minStepSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700318807307549014, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
+      propertyPath: footstepInterval
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5357903310286842804, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
       propertyPath: m_Name
       value: Player
