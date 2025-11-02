@@ -1291,6 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fcd7457d5c43b982f72370f4fa06b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.CameraController"
+  _camera: {fileID: 282804179}
 --- !u!114 &390581441
 MonoBehaviour:
   m_ObjectHideFlags: 0

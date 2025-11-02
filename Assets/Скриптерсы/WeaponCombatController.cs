@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
+using Zenject;
 using Скриптерсы;
 using CharacterController = Скриптерсы.CharacterController;
 
@@ -16,6 +17,8 @@ public class WeaponCombatController : MonoBehaviour
     [SerializeField] private float lightDuration = 0.1f;
     [SerializeField] private Animator _animator;
     [SerializeField] private float fireRate = 0.5f;
+    
+    [Inject] private CameraController _cameraController;
     
     private float TotalAmmo = 0f;
     private float AmmoCountInClip = 0f;
@@ -51,6 +54,7 @@ public class WeaponCombatController : MonoBehaviour
         muzzleVfx.Play();
         StartCoroutine(FlashLight());
         _animator.SetTrigger("Shoot");
+        _cameraController.FovFade(6f, 0.04f, 0.1f);
 
         if (Physics.Raycast(ray, out RaycastHit hit, 100, _layerMask, QueryTriggerInteraction.Ignore) && hit.collider.TryGetComponent(out IDamageable damageable))
         {
