@@ -66,3 +66,5 @@ crashlytics-build.properties
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 
 UserSettings/EditorUserSettings.asset
+
+fmod_editor.log
