@@ -1042,7 +1042,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 25.689, y: 25.689}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &327483950
 MonoBehaviour:
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f34528753969bc04883813b33c819a8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7783e7f7e0fb444eb5ea8f5d7ceed36, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1292,6 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.CameraController"
   _camera: {fileID: 282804179}
+  _panTilt: {fileID: 282804182}
 --- !u!114 &390581441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1342,6 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2ef69546f9d0640904df3904856c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponCombatController
+  _weaponFeedBackData: {fileID: 11400000, guid: de1e7b0c81567f44a8672c3ba413d12f, type: 2}
   _characterController: {fileID: 390581439}
   _layerMask:
     serializedVersion: 2
@@ -1351,7 +1353,6 @@ MonoBehaviour:
   _light: {fileID: 586812075}
   lightDuration: 0.1
   _animator: {fileID: 1959339730}
-  fireRate: 0.5
 --- !u!114 &390581445
 MonoBehaviour:
   m_ObjectHideFlags: 0
