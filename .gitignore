@@ -62,7 +62,11 @@ sysinfo.txt
 crashlytics-build.properties
 
 /Packages/com.hauntedpsx.render-pipelines.psx
+<<<<<<< HEAD
+/fmod_editor.log
+=======
 
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 
 UserSettings/EditorUserSettings.asset
+>>>>>>> 42b44a23dbb689de8ff4447066a6dff5ca9026f1
