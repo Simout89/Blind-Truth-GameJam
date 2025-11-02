@@ -5,10 +5,12 @@ using UnityEngine.InputSystem;
 using UnityEngine.VFX;
 using Zenject;
 using Скриптерсы;
+using Скриптерсы.Datas;
 using CharacterController = Скриптерсы.CharacterController;
 
 public class WeaponCombatController : MonoBehaviour
 {
+    [SerializeField] private WeaponFeedBackData  _weaponFeedBackData;
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private Camera camera;
@@ -16,9 +18,10 @@ public class WeaponCombatController : MonoBehaviour
     [SerializeField] private Light _light;
     [SerializeField] private float lightDuration = 0.1f;
     [SerializeField] private Animator _animator;
-    [SerializeField] private float fireRate = 0.5f;
     
     [Inject] private CameraController _cameraController;
+
+    public event Action OnAmmoChanged;
     
     private float TotalAmmo = 0f;
     private float AmmoCountInClip = 0f;
@@ -54,13 +57,15 @@ public class WeaponCombatController : MonoBehaviour
         muzzleVfx.Play();
         StartCoroutine(FlashLight());
         _animator.SetTrigger("Shoot");
-        _cameraController.FovFade(6f, 0.04f, 0.1f);
+        
+        _cameraController.FovFade(_weaponFeedBackData.additionFov, _weaponFeedBackData.fadeInDuration, _weaponFeedBackData.fadeOutDuration);
+        _cameraController.Shake(_weaponFeedBackData.tiltIntensity, UnityEngine.Random.Range(_weaponFeedBackData.leftRightTilt.x, _weaponFeedBackData.leftRightTilt.y), _weaponFeedBackData.duration);
 
         if (Physics.Raycast(ray, out RaycastHit hit, 100, _layerMask, QueryTriggerInteraction.Ignore) && hit.collider.TryGetComponent(out IDamageable damageable))
         {
             Debug.Log(hit.collider.name);
 
-            var damageInfo = new DamageInfo(_characterController.CharacterControllerData.Damage, "player");
+            var damageInfo = new DamageInfo(_characterController.CharacterControllerData.Damage, "player", transform);
             
             damageable.TakeDamage(damageInfo);
         }

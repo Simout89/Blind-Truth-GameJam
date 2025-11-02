@@ -9,6 +9,8 @@ namespace Скриптерсы
     {
         [SerializeField] private CinemachineCamera _camera;
 
+        [SerializeField] private CinemachinePanTilt _panTilt;
+        
         public void FovFade(float additionFov, float fadeInDuration, float fadeOutDuration)
         {
             DOTween.Kill(_camera);
@@ -35,6 +37,22 @@ namespace Скриптерсы
                         currentFov,
                         fadeOutDuration);
                 });
+        }
+        
+        public void Shake(float tiltIntensity, float panIntensity, float duration)
+        {
+            float targetTilt = _panTilt.TiltAxis.Value + tiltIntensity;
+            float targetPan = _panTilt.PanAxis.Value + panIntensity;
+            
+            DOTween.To(() => _panTilt.TiltAxis.Value,
+                x => _panTilt.TiltAxis.Value = x,
+                targetTilt,
+                duration);
+            
+            DOTween.To(() => _panTilt.PanAxis.Value,
+                x => _panTilt.PanAxis.Value = x,
+                targetPan,
+                duration);
         }
         
         public void Enable()
