@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{4eeb739e-069c-4894-8fe5-90463bc02924}">
 		<property name="name">
-			<value>GroundMaterial</value>
+			<value>PlayerGroundMaterial</value>
 		</property>
 		<relationship name="folder">
 			<destination>{7880ad3a-2bb7-464c-84cd-54e68c9cbc74}</destination>
@@ -25,8 +25,14 @@
 			<value>Grass</value>
 			<value>Gravel</value>
 		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
 		<property name="initialValue">
 			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
 		</property>
 	</object>
 </objects>

@@ -18,5 +18,8 @@ MonoBehaviour:
   <DelayBetweenShots>k__BackingField: 0.5
   <MoveSpeed>k__BackingField: 5
   <Gravity>k__BackingField: -9.81
-  <SprintMultiplayer>k__BackingField: 1.5
   <CrouchMultiplayer>k__BackingField: 0.5
+  <SprintMultiplayer>k__BackingField: 1.3
+  <MaxValue>k__BackingField: 100
+  <RateOfDecrease>k__BackingField: 20
+  <RateOfIncrease>k__BackingField: 10

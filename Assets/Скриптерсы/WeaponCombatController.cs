@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
@@ -57,6 +58,8 @@ public class WeaponCombatController : MonoBehaviour
         muzzleVfx.Play();
         StartCoroutine(FlashLight());
         _animator.SetTrigger("Shoot");
+        RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_Fire");
+        
         
         _cameraController.FovFade(_weaponFeedBackData.additionFov, _weaponFeedBackData.fadeInDuration, _weaponFeedBackData.fadeOutDuration);
         _cameraController.Shake(_weaponFeedBackData.tiltIntensity, UnityEngine.Random.Range(_weaponFeedBackData.leftRightTilt.x, _weaponFeedBackData.leftRightTilt.y), _weaponFeedBackData.duration);

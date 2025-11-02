@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977021062847996
+  lastModified: 638977220050093500
   FileSizes:
   - Name: Desktop
-    Value: 4485856
+    Value: 5277440
   Exists: 1
 --- !u!114 &-7861242505763819229
 MonoBehaviour:
@@ -71,6 +71,35 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-7185516931496424535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlayerGroundMaterial
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: PlayerGroundMaterial
+  StudioPath: parameter:/PlayerGroundMaterial
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 973469381
+    data2: 623625467
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Dirt
+  - Wood
+  - Stone
+  - Grass
+  - Gravel
+  Exists: 1
 --- !u!114 &-7140058353157006055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,33 +124,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4746807979415362190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Level1Ambience
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Ambience/Level1Ambience
-  Guid:
-    Data1: -2006864280
-    Data2: 1161611052
-    Data3: -738500448
-    Data4: -97916526
-  Banks:
-  - {fileID: -8368266062490871645}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 25610
 --- !u!114 &-4185033931901549649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,10 +139,10 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977021062937753
+  lastModified: 638977220050174388
   FileSizes:
   - Name: Desktop
-    Value: 1422
+    Value: 1548
   Exists: 1
 --- !u!114 &-4098438616091978867
 MonoBehaviour:
@@ -164,6 +166,58 @@ MonoBehaviour:
     data2: 2326741449
   Type: 0
   IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-3721991044587662224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Level1Ambience
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Level1Ambience
+  Guid:
+    Data1: -2006864280
+    Data2: 1161611052
+    Data3: -738500448
+    Data4: -97916526
+  Banks:
+  - {fileID: -8368266062490871645}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2408246971076063527}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22325
+--- !u!114 &-2408246971076063527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1Ambience/Fight
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Fight
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1942404122
+    data2: 2124486142
+  Type: 0
+  IsGlobal: 0
   Labels: []
   Exists: 1
 --- !u!114 &-1900352677239049712
@@ -210,21 +264,24 @@ MonoBehaviour:
   - {fileID: -8368266062490871645}
   EditorEvents:
   - {fileID: 3129906424241598241}
-  - {fileID: -4746807979415362190}
   - {fileID: -1900352677239049712}
   - {fileID: -8756317111889884885}
   - {fileID: 2211789018440315519}
   - {fileID: 4306368429419446002}
   - {fileID: 2941346195417914351}
   - {fileID: 1151839789392935724}
+  - {fileID: -3721991044587662224}
+  - {fileID: 1896251992402088917}
+  - {fileID: 1772378213898176134}
   EditorParameters:
   - {fileID: 2645321928748280192}
   - {fileID: -4098438616091978867}
+  - {fileID: -7185516931496424535}
   MasterBanks:
   - {fileID: -8368266062490871645}
   StringsBanks:
   - {fileID: -4185033931901549649}
-  cacheTime: 638977021062937753
+  cacheTime: 638977220050174388
   cacheVersion: 131633
 --- !u!114 &1151839789392935724
 MonoBehaviour:
@@ -247,6 +304,60 @@ MonoBehaviour:
   Banks:
   - {fileID: -8368266062490871645}
   IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1772378213898176134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_PickUp
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_PickUp
+  Guid:
+    Data1: -1223367821
+    Data2: 1163731084
+    Data3: -186650975
+    Data4: 1737337450
+  Banks:
+  - {fileID: -8368266062490871645}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1896251992402088917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_TakeDamage
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_TakeDamage
+  Guid:
+    Data1: -1526030531
+    Data2: 1333376880
+    Data3: 627410309
+    Data4: -1305499360
+  Banks:
+  - {fileID: -8368266062490871645}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -398,9 +509,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/p_Footsteps/GroundMaterial
+  m_Name: parameter:/p_Footsteps/PlayerGroundMaterial
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: GroundMaterial
+  Name: PlayerGroundMaterial
   StudioPath: 
   Min: 0
   Max: 4
@@ -409,7 +520,7 @@ MonoBehaviour:
     data1: 973469381
     data2: 623625467
   Type: 2
-  IsGlobal: 0
+  IsGlobal: 1
   Labels:
   - Dirt
   - Wood
