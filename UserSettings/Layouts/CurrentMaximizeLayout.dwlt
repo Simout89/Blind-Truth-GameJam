@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 99170
+  controlID: 104285
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 99171
+  controlID: 104286
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 99172
+  controlID: 104287
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 99173
+  controlID: 104288
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -995,9 +995,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -5.901849, y: 0.66802984, z: -18.628128}
+    m_Target: {x: -5.8588424, y: -0.22163688, z: -19.971764}
     speed: 2
-    m_Value: {x: -5.901849, y: 0.66802984, z: -18.628128}
+    m_Value: {x: -5.858739, y: -0.22161923, z: -19.971855}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1043,9 +1043,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.016796513, y: -0.627156, z: 0.013581501, w: 0.77873135}
+    m_Target: {x: 0.058402818, y: -0.6838728, z: 0.055142794, w: 0.7253166}
     speed: 2
-    m_Value: {x: 0.016827261, y: -0.6252184, z: 0.013539702, w: 0.78015083}
+    m_Value: {x: 0.05846258, y: -0.68292767, z: 0.055066682, w: 0.7260576}
   m_Size:
     m_Target: 4.7618756
     speed: 2
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 99261
+  controlID: 104378
   draggingID: 0
 --- !u!114 &15
 MonoBehaviour:
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 264a0100
     m_LastClickedInstanceID: 84518
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: ec3a0b007c44010028340100563e0b00c4701300e83b1300265109006c410900223e0900eea60200f00b01004048e7ff702e040000f90000c01e01000ed00400f43c010000000000bee70100c2130500923501009435010096350100983501009a3501009e35010000c4020022c6020010f40100
     m_RenameOverlay:
       m_UserAcceptedRename: 0

@@ -2085,7 +2085,7 @@ MonoBehaviour:
   crouchScale: 0.5
   crouchDuration: 0.2
   overheadCheckDistance: 1
-  overheadCheckRadius: 0.42
+  overheadCheckRadius: 0.5
   obstacleMask:
     serializedVersion: 2
     m_Bits: 1
