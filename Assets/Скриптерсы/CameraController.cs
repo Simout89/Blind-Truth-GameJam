@@ -1,22 +1,40 @@
 ﻿using System;
 using DG.Tweening;
+using Unity.Cinemachine;
 using UnityEngine;
 
 namespace Скриптерсы
 {
     public class CameraController: MonoBehaviour
     {
-        [SerializeField] private Camera _camera;
-        
+        [SerializeField] private CinemachineCamera _camera;
+
         public void FovFade(float additionFov, float fadeInDuration, float fadeOutDuration)
         {
-            _camera.DOComplete();
+            DOTween.Kill(_camera);
 
-            float fov = _camera.fieldOfView;
-        
-            _camera.DOFieldOfView(fov + additionFov, fadeInDuration) 
+            float currentFov = _camera.Lens.FieldOfView;
+            float targetFov = currentFov + additionFov;
+
+            DOTween.To(() => _camera.Lens.FieldOfView, 
+                    x => {
+                        var lens = _camera.Lens;
+                        lens.FieldOfView = x;
+                        _camera.Lens = lens;
+                    }, 
+                    targetFov, 
+                    fadeInDuration)
                 .OnComplete(() =>
-                    _camera.DOFieldOfView(fov, fadeOutDuration));
+                {
+                    DOTween.To(() => _camera.Lens.FieldOfView,
+                        x => {
+                            var lens = _camera.Lens;
+                            lens.FieldOfView = x;
+                            _camera.Lens = lens;
+                        },
+                        currentFov,
+                        fadeOutDuration);
+                });
         }
         
         public void Enable()
