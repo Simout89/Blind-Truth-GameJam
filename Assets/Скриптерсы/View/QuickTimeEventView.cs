@@ -83,8 +83,8 @@ namespace Скриптерсы
         private void HandleStop()
         {
             enable = false;
-
-            _eventInstance.stop(STOP_MODE.ALLOWFADEOUT);
+            
+            _eventInstance.setParameterByName("Volume", 0);
             
             qteGameObject.SetActive(false);
             // Сбрасываем все активные триггеры перед остановкой
