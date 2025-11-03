@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Скриптерсы.Enemy
 {
@@ -22,6 +23,8 @@ namespace Скриптерсы.Enemy
             {
                 return;
             }
+            
+            Debug.Log(typeof(T));
 
             if (states.TryGetValue(type, out var newState))
             {

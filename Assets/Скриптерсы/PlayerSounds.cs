@@ -50,7 +50,7 @@ namespace Скриптерсы
             if (horizontalSpeed < 0.1)
             {
                 stepSoundInvoker.SetInterval(footstepInterval);
-                longAfkInvoker.SetInterval(afkSoundInterval);
+                longAfkInvoker.ResetTimer();
             }
         
             if (horizontalSpeed >= minStepSpeed && unityCharacterController.isGrounded)

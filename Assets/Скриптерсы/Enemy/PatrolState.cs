@@ -15,6 +15,11 @@ namespace Скриптерсы.Enemy
         public override void Enter()
         {
             base.Enter();
+            
+            if(enemyBase.PlayerTransform != null)
+                enemyBase.PlayerTransform.GetComponent<PursuitHandler>().StopPursuit(enemyBase);
+
+            enemyBase.navMeshAgent.speed = enemyBase.EnemyData.DefaultSpeed;
             enemyBase.navMeshAgent.destination = enemyBase.anchors[enemyBase.currentPoint].position;
         }
 
@@ -24,26 +29,41 @@ namespace Скриптерсы.Enemy
 
             if (Vector3.Distance(enemyBase.anchors[enemyBase.currentPoint].position, enemyBase.transform.position) <= 1f)
             {
-                if (forwardDirection)
+                if (enemyBase.LoopPath)
                 {
+                    // Режим цикличного патрулирования
                     enemyBase.currentPoint++;
                     
-                    if (enemyBase.currentPoint == enemyBase.anchors.Length)
+                    if (enemyBase.currentPoint >= enemyBase.anchors.Length)
                     {
-                        enemyBase.currentPoint--;
-                        forwardDirection = false;
+                        enemyBase.currentPoint = 0;
                     }
                 }
                 else
                 {
-                    enemyBase.currentPoint--;
-                    
-                    if (enemyBase.currentPoint == -1)
+                    // Режим патрулирования туда-обратно
+                    if (forwardDirection)
                     {
                         enemyBase.currentPoint++;
-                        forwardDirection = true;
+                        
+                        if (enemyBase.currentPoint >= enemyBase.anchors.Length)
+                        {
+                            enemyBase.currentPoint = enemyBase.anchors.Length - 1;
+                            forwardDirection = false;
+                        }
+                    }
+                    else
+                    {
+                        enemyBase.currentPoint--;
+                        
+                        if (enemyBase.currentPoint < 0)
+                        {
+                            enemyBase.currentPoint = 0;
+                            forwardDirection = true;
+                        }
                     }
                 }
+                
                 enemyBase.navMeshAgent.destination = enemyBase.anchors[enemyBase.currentPoint].position;
             }
         }

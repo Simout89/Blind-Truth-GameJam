@@ -17,6 +17,11 @@ namespace Скриптерсы.Enemy
         {
             base.Enter();
 
+            _enemyBase.PlayerTransform.GetComponent<PursuitHandler>().StartPursuit(_enemyBase);
+            
+            _enemyBase.Animator.SetBool("Pursuit", true);
+            _enemyBase.navMeshAgent.speed = _enemyBase.EnemyData.PursuitSpeed;
+
             _enemyBase.navMeshAgent.destination = _enemyBase.PlayerTransform.position;
         }
 
@@ -31,12 +36,18 @@ namespace Скриптерсы.Enemy
             {
                 _fsm.ChangeState<PatrolState>();
             }
+
+            if (Vector3.Distance(_enemyBase.transform.position, _enemyBase.PlayerTransform.position) <= _enemyBase.EnemyData.AttackRange)
+            {
+                _fsm.ChangeState<AttackState>();
+            }
         }
 
         public override void Exit()
         {
             base.Exit();
-            
+            _enemyBase.Animator.SetBool("Pursuit", false);
+
         }
     }
 }

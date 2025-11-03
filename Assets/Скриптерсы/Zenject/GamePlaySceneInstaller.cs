@@ -12,6 +12,10 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<CameraController>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerInteraction>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerHealth>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<WeaponCombatController>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<QuickTimeEvent>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<QuickTimeEventView>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<CharacterController>().FromComponentsInHierarchy().AsSingle();
 
         }
     }

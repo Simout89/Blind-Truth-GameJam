@@ -8,6 +8,9 @@ namespace Скриптерсы
         {
             [Inject] private CameraController _cameraController;
             [Inject] private PlayerInteraction _playerInteraction;
+            [Inject] private WeaponCombatController _weaponCombatController;
+            [Inject] private CharacterController characterController;
+
             public GameStates CurrentState => currentState;
             private GameStates currentState = GameStates.Play;
             public GameStates PreviousState => previousState;
@@ -34,6 +37,9 @@ namespace Скриптерсы
                         Cursor.lockState = CursorLockMode.Locked;
                         _cameraController.Enable();
                         _playerInteraction.Enable();
+                        _weaponCombatController.ShowHands();
+                        _weaponCombatController.Enable();
+                        characterController.Enable();
                     } break;
                     case GameStates.Pause:
                     {
@@ -41,6 +47,11 @@ namespace Скриптерсы
                         Cursor.lockState = CursorLockMode.None;
                         _cameraController.Disable();
                         _playerInteraction.Disable();
+                        _weaponCombatController.ShowHands();
+                        _weaponCombatController.Disable();
+                        characterController.Disable();
+
+
                     } break;
                     case GameStates.Note:
                     {
@@ -48,6 +59,23 @@ namespace Скриптерсы
                         Cursor.lockState = CursorLockMode.None;
                         _cameraController.Disable();
                         _playerInteraction.Disable();
+                        _weaponCombatController.HideHands();
+                        _weaponCombatController.Disable();
+                        characterController.Disable();
+
+
+                    } break;
+                    case GameStates.QTE:
+                    {
+                        Time.timeScale = 1;
+                        Cursor.lockState = CursorLockMode.None;
+                        _cameraController.Disable();
+                        _playerInteraction.Disable();
+                        _weaponCombatController.HideHands();
+                        _weaponCombatController.Disable();
+                        characterController.Disable();
+
+
                     } break;
                 }
 
@@ -62,6 +90,7 @@ namespace Скриптерсы
         {
             Play,
             Pause,
-            Note
+            Note,
+            QTE
         }
     }

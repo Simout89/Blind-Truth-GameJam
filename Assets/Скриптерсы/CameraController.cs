@@ -57,12 +57,12 @@ namespace Скриптерсы
         
         public void Enable()
         {
-            
+            _panTilt.enabled = true;
         }
 
         public void Disable()
         {
-            
+            _panTilt.enabled = false;
         }
     }
 }

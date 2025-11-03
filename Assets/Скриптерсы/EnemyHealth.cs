@@ -9,6 +9,7 @@ namespace Скриптерсы
         [SerializeField] private BodyPart[] _bodyParts;
         private float currentHealth;
         public event Action<DamageInfo> OnTakeDamage;
+        public event Action OnDeath;
 
         public void Init(EnemyData _enemyData)
         {
@@ -52,7 +53,8 @@ namespace Скриптерсы
             {
                 Debug.Log("Смерть");
                 
-                Destroy(gameObject);
+                OnDeath?.Invoke();
+                // Destroy(gameObject);
             }
         }
     }
