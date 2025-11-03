@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Users/Ankhe/Scene/Village.unity
     guid: dfb6496a167da8640a986be7cf9d4dcf
+  - enabled: 1
+    path: Assets/Scenes/Albert/Credits.unity
+    guid: 8a83ba6fce9d5e249bb9bb06cbc526d7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -55,7 +55,7 @@ namespace Скриптерсы
                     } break;
                     case GameStates.Note:
                     {
-                        Time.timeScale = 0;
+                        Time.timeScale = 1;
                         Cursor.lockState = CursorLockMode.None;
                         _cameraController.Disable();
                         _playerInteraction.Disable();
@@ -68,6 +68,18 @@ namespace Скриптерсы
                     case GameStates.QTE:
                     {
                         Time.timeScale = 1;
+                        Cursor.lockState = CursorLockMode.None;
+                        _cameraController.Disable();
+                        _playerInteraction.Disable();
+                        _weaponCombatController.HideHands();
+                        _weaponCombatController.Disable();
+                        characterController.Disable();
+
+
+                    } break;
+                    case GameStates.End:
+                    {
+                        Time.timeScale = 0;
                         Cursor.lockState = CursorLockMode.None;
                         _cameraController.Disable();
                         _playerInteraction.Disable();
@@ -91,6 +103,7 @@ namespace Скриптерсы
             Play,
             Pause,
             Note,
-            QTE
+            QTE,
+            End
         }
     }

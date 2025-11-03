@@ -1,24 +1,35 @@
 ﻿using System;
 using DG.Tweening;
+using FMOD.Studio;
 using FMODUnity;
+using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
+using Random = UnityEngine.Random;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Скриптерсы
 {
     public class QuickTimeEventView: MonoBehaviour
     {
         [Inject] private QuickTimeEvent _quickTimeEvent;
+        [Inject] private GameStateManager _gameStateManager;
         [SerializeField] private GameObject qteGameObject;
         [SerializeField] private Image imageProgress;
         [SerializeField] private CanvasGroup rightEye;
         [SerializeField] private CanvasGroup leftEye;
         [SerializeField] private GameObject rightBlack;
         [SerializeField] private GameObject leftBlack;
+        [SerializeField] private GameObject blackScreen;
         [SerializeField] private Animator _animator;
+        [SerializeField] private CinemachineImpulseSource _impulseSource;
 
         private bool enable = false;
+
+
+        private EventInstance _eventInstance;
         
         
         private void OnEnable()
@@ -26,6 +37,8 @@ namespace Скриптерсы
             _quickTimeEvent.OnStartQte += HandleStart;
             _quickTimeEvent.OnStopQte += HandleStop;
             _quickTimeEvent.OnValueChanged += HandleValueChanged;
+
+            _quickTimeEvent.OnDone += HandleDone;
         }
         
         private void OnDisable()
@@ -33,6 +46,14 @@ namespace Скриптерсы
             _quickTimeEvent.OnStartQte -= HandleStart;
             _quickTimeEvent.OnStopQte -= HandleStop;
             _quickTimeEvent.OnValueChanged -= HandleValueChanged;
+            
+            _quickTimeEvent.OnDone -= HandleDone;
+        }
+
+        private void HandleDone()
+        {
+            _gameStateManager.ChangeState(GameStates.End);
+            blackScreen.SetActive(true);
         }
 
         private void Awake()
@@ -46,6 +67,8 @@ namespace Скриптерсы
         private void HandleStart()
         {
             enable = true;
+            _eventInstance = RuntimeManager.CreateInstance("event:/SFX/InGame/Player/p_Scream");
+            _eventInstance.start();
             
             qteGameObject.SetActive(true);
             // Сбрасываем черные объекты при старте нового QTE
@@ -60,6 +83,8 @@ namespace Скриптерсы
         private void HandleStop()
         {
             enable = false;
+            
+            _eventInstance.setParameterByName("Volume", 0);
             
             qteGameObject.SetActive(false);
             // Сбрасываем все активные триггеры перед остановкой
@@ -102,7 +127,7 @@ namespace Скриптерсы
             }
             
             RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_Stab");
-
+            _impulseSource.GenerateImpulse(Random.insideUnitSphere);
         }
     }
 
