@@ -234,10 +234,10 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977958844540453
+  lastModified: 638978041248797143
   FileSizes:
   - Name: 
-    Value: 2668
+    Value: 2752
   Exists: 1
 --- !u!114 &-2295204205336815708
 MonoBehaviour:
@@ -447,6 +447,8 @@ MonoBehaviour:
   - {fileID: 8899970335580380980}
   - {fileID: 40438198268885274}
   - {fileID: -2295204205336815708}
+  - {fileID: 7589631615176041427}
+  - {fileID: 1962967823630907398}
   EditorParameters:
   - {fileID: 1654891433697468468}
   - {fileID: 5199305913544672542}
@@ -456,7 +458,7 @@ MonoBehaviour:
   - {fileID: 3206694555944759032}
   StringsBanks:
   - {fileID: -4348394102023048894}
-  cacheTime: 638977958844540453
+  cacheTime: 638978041248797143
   cacheVersion: 131633
 --- !u!114 &40438198268885274
 MonoBehaviour:
@@ -721,6 +723,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 60
   Length: 4182
+--- !u!114 &1962967823630907398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_Scream
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_Scream
+  Guid:
+    Data1: -1216381050
+    Data2: 1210127934
+    Data3: -1036468081
+    Data4: 1535583956
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16639
 --- !u!114 &2028466685197480072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,7 +875,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977958844470490
+  lastModified: 638978041248697076
   FileSizes: []
   Exists: 1
 --- !u!114 &3976135349645162472
@@ -1196,6 +1225,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7589631615176041427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_NoAmmo
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_NoAmmo
+  Guid:
+    Data1: 74429733
+    Data2: 1193435107
+    Data3: 2094656945
+    Data4: 1685816495
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1197
 --- !u!114 &8899970335580380980
 MonoBehaviour:
   m_ObjectHideFlags: 0
