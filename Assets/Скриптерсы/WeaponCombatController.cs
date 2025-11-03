@@ -29,6 +29,7 @@ public class WeaponCombatController : MonoBehaviour
     private bool isReloading = false;
 
     public event Action<AmmoInfo> OnAmmoChanged;
+    public event Action OnWeaponPickUp;
     
     private int TotalAmmo = 0;
     private int AmmoCountInClip = 0;
@@ -195,6 +196,7 @@ public class WeaponCombatController : MonoBehaviour
     {
         haveWeapon = true;
         _animator.SetTrigger("PickUp");
+        OnWeaponPickUp?.Invoke();
     }
 }
 
