@@ -17,6 +17,12 @@ namespace Скриптерсы
         {
             currentHealth = _enemyData.Health;
         }
+        
+        public void Init(int MaxHealth)
+        {
+            currentHealth = MaxHealth;
+        }
+
 
         private void OnEnable()
         {
