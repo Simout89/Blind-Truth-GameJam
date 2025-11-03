@@ -30,10 +30,8 @@ public class PursuitHandler : MonoBehaviour
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", fightValue);
     }
 
-    public void StopMusic()
+    public void PlayMusic()
     {
-        enemyBases.Clear();
-        CheckPursuit();
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 1);
     }
 }

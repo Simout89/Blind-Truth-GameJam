@@ -48,7 +48,7 @@ namespace Скриптерсы
                 qte = StartCoroutine(QTE());
                 qteFail = StartCoroutine(QTEFailTimer());
                 gameStateManager.ChangeState(GameStates.QTE);
-                _pursuitHandler.StopMusic();
+                _pursuitHandler.PlayMusic();
             }
         }
 
@@ -78,6 +78,8 @@ namespace Скриптерсы
                 qteFail = null;
             }
             OnDone?.Invoke();
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
+
             qte = null;
         }
 
