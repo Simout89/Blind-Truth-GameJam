@@ -23,7 +23,7 @@
 	<object class="MixerBusPanner" id="{064330b1-dd75-41dc-adad-b8912c6080e4}" />
 	<object class="MixerSend" id="{64a26794-33c4-4fa4-9f6d-3d473c1a5f92}">
 		<property name="inputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="automators">
 			<destination>{8582c9e7-f1cc-4faf-b37f-29c52d8731a1}</destination>
