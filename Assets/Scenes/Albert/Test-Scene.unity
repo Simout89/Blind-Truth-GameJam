@@ -11441,6 +11441,10 @@ PrefabInstance:
       propertyPath: ImpulseDefinition.ImpulseShape
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7946111525217071453, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
+      propertyPath: _particleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8223106655544290428, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
       propertyPath: m_Layer
       value: 3

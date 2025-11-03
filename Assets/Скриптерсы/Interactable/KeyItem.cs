@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FMODUnity;
+using UnityEngine;
 using Zenject;
 using Скриптерсы.Datas;
 
@@ -11,6 +12,9 @@ namespace Скриптерсы.Interactable
         public ClickResult Click()
         {
             _playerInteraction.AddKey(_keyItemData);
+            
+            if(_keyItemData.PickUpSound != "")
+                RuntimeManager.PlayOneShot(_keyItemData.PickUpSound);
             
             Destroy(gameObject);
             
