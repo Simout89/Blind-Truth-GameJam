@@ -114,8 +114,9 @@ public class WeaponCombatController : MonoBehaviour
         {
             Debug.Log(hit.collider.name);
 
+            Vector3 directionToCamera = (camera.transform.position - hit.point).normalized;
             LeanPool.Despawn(LeanPool.Spawn(_characterController.CharacterControllerData.bloodVfx, hit.point,
-                Quaternion.LookRotation(_characterController.transform.position), null), 3f);
+                Quaternion.LookRotation(directionToCamera), null), 3f);
 
             var damageInfo = new DamageInfo(_characterController.CharacterControllerData.Damage, "player", transform);
             
