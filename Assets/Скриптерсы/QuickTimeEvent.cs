@@ -15,6 +15,7 @@ namespace Скриптерсы
         public float currentValue { get; private set; } = 0;
         [Inject] private IInputService _inputService;
         [Inject] private GameStateManager gameStateManager;
+        [Inject] private PursuitHandler _pursuitHandler;
 
         public event Action OnStartQte;
         public event Action OnStopQte;
@@ -47,6 +48,7 @@ namespace Скриптерсы
                 qte = StartCoroutine(QTE());
                 qteFail = StartCoroutine(QTEFailTimer());
                 gameStateManager.ChangeState(GameStates.QTE);
+                _pursuitHandler.StopMusic();
             }
         }
 
