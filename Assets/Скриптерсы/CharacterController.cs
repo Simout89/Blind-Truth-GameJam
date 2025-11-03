@@ -18,6 +18,8 @@ namespace Скриптерсы
         private float _verticalVelocity;
         private Transform _cameraTransform;
 
+        private bool enable = true;
+
         private void Awake()
         {
             if (_characterController == null)
@@ -32,6 +34,9 @@ namespace Скриптерсы
 
         private void Update()
         {
+            if(!enable)
+                return;
+            
             Move();
         }
 
@@ -71,6 +76,17 @@ namespace Скриптерсы
 
             _verticalVelocity += CharacterControllerData.Gravity * Time.deltaTime;
             return Vector3.up * _verticalVelocity * Time.deltaTime;
+        }
+
+        public void Enable()
+        {
+            enable = true;
+        }
+
+        public void Disable()
+        {
+            enable = false;
+            _characterController.Move(Vector3.zero);
         }
     }
 }
