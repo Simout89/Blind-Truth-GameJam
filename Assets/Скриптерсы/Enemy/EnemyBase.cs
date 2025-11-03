@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.AI;
 using Скриптерсы.Datas;
@@ -18,6 +19,11 @@ namespace Скриптерсы.Enemy
         [HideInInspector] public int currentPoint = 0;
         [SerializeField] private TriggerDetector _triggerDetector;
         [SerializeField] private LayerMask _layerMask;
+        [SerializeField] public Transform attackZone;
+        [SerializeField] public Animator Animator;
+        [SerializeField] private float footstepInterval = 0.3f;
+        [SerializeField] private float minStepSpeed = 1f;
+        private TimedInvoker stepSoundInvoker;
         public Transform PlayerTransform { get; private set; }
 
         private Fsm _fsm;
@@ -27,19 +33,31 @@ namespace Скриптерсы.Enemy
         private void Awake()
         {
             EnemyHealth.Init(EnemyData);
+            navMeshAgent.speed = EnemyData.DefaultSpeed;
+
+            stepSoundInvoker = new TimedInvoker(PlayStepSound, footstepInterval);
             
             _fsm = new Fsm();
             _fsm.AddState(new PatrolState(_fsm, this));
             _fsm.AddState(new PursuitState(_fsm, this));
+            _fsm.AddState(new AttackState(_fsm, this));
+            _fsm.AddState(new DeathState(_fsm, this));
             _fsm.ChangeState<PatrolState>();
 
             if (anchors != null && anchors.Length > 0)
                 transform.position = anchors[0].position;
         }
 
+        private void PlayStepSound()
+        {
+            if(EnemyData.FootStepSound != "")
+                RuntimeManager.PlayOneShot(EnemyData.FootStepSound, transform.position);
+        }
+
         private void OnEnable()
         {
             EnemyHealth.OnTakeDamage += HandleTakeDamage;
+            EnemyHealth.OnDeath += HandleDeath;
 
             _triggerDetector.onTriggerEntered += HandleEntered;
             _triggerDetector.onTriggerExited += HandleExited;
@@ -48,9 +66,16 @@ namespace Скриптерсы.Enemy
         private void OnDisable()
         {
             EnemyHealth.OnTakeDamage -= HandleTakeDamage;
+            EnemyHealth.OnDeath -= HandleDeath;
+
             
             _triggerDetector.onTriggerEntered -= HandleEntered;
             _triggerDetector.onTriggerExited -= HandleExited;
+        }
+
+        private void HandleDeath()
+        {
+            _fsm.ChangeState<DeathState>();
         }
 
         private void HandleEntered(Collider obj)
@@ -73,6 +98,9 @@ namespace Скриптерсы.Enemy
 
         private void HandleTakeDamage(DamageInfo damageInfo)
         {
+            if(EnemyData.TakeDamageSound != "")
+                RuntimeManager.PlayOneShot(EnemyData.TakeDamageSound, transform.position);
+            
             PlayerTransform = damageInfo.Transform;
             if (_fsm.CurrentState.GetType() == typeof(PatrolState))
             {
@@ -82,6 +110,17 @@ namespace Скриптерсы.Enemy
 
         private void Update()
         {
+            if (navMeshAgent.velocity.magnitude > EnemyData.PursuitSpeed / 2)
+            {
+                stepSoundInvoker.SetInterval(footstepInterval / 3);
+                stepSoundInvoker.Tick();
+            }
+            else if (navMeshAgent.velocity.magnitude > 1f)
+            {
+                stepSoundInvoker.SetInterval(footstepInterval);
+                stepSoundInvoker.Tick();
+            }
+            
             _fsm.Update();
         }
 
@@ -129,6 +168,11 @@ namespace Скриптерсы.Enemy
             {
                 anchors = newAnchors;
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawSphere(attackZone.position, EnemyData.AttackZoneRadius);
         }
 
         public Transform GetContainer() => container;

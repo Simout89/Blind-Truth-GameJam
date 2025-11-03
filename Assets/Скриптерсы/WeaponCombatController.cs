@@ -19,32 +19,75 @@ public class WeaponCombatController : MonoBehaviour
     [SerializeField] private Light _light;
     [SerializeField] private float lightDuration = 0.1f;
     [SerializeField] private Animator _animator;
+    [SerializeField] private GameObject[] hands;
     
     [Inject] private CameraController _cameraController;
 
-    public event Action OnAmmoChanged;
+    private bool enable = true;
+
+    public event Action<AmmoInfo> OnAmmoChanged;
     
-    private float TotalAmmo = 0f;
-    private float AmmoCountInClip = 0f;
+    private int TotalAmmo = 0;
+    private int AmmoCountInClip = 0;
     private float _nextFireTime = 0f; // Время следующего возможного выстрела
 
     private void OnEnable()
     {
         _characterController._inputService.InputSystemActions.Player.Attack.performed += HandleAttack;
+        _characterController._inputService.InputSystemActions.Player.Reload.performed += HandleReload;
+
     }
 
     private void OnDisable()
     {
         _characterController._inputService.InputSystemActions.Player.Attack.performed -= HandleAttack;
+        _characterController._inputService.InputSystemActions.Player.Reload.performed -= HandleReload;
+    }
+
+    private void HandleReload(InputAction.CallbackContext obj)
+    {
+        if(!enable)
+            return;
+        Reload();
     }
 
     private void HandleAttack(InputAction.CallbackContext obj)
     {
+        if(!enable)
+            return;
         TryShoot();
     }
 
+    public void AddAmmo(int count)
+    {
+        TotalAmmo += count;
+        OnAmmoChanged?.Invoke(new AmmoInfo(TotalAmmo, AmmoCountInClip));
+    }
+
+    public void Reload()
+    {
+        if (AmmoCountInClip >= _characterController.CharacterControllerData.MaxAmmoInClip)
+            return;
+
+        if (TotalAmmo <= 0)
+            return;
+
+        int neededAmmo = _characterController.CharacterControllerData.MaxAmmoInClip - AmmoCountInClip;
+
+        int ammoToLoad = Mathf.Min(neededAmmo, TotalAmmo);
+
+        AmmoCountInClip += ammoToLoad;
+        TotalAmmo -= ammoToLoad;
+        RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_Reload");
+        OnAmmoChanged?.Invoke(new AmmoInfo(TotalAmmo, AmmoCountInClip));
+    }
+
+
     private void TryShoot()
     {
+        if(AmmoCountInClip <= 0)
+            return;
+        
         if (Time.time < _nextFireTime)
         {
             return;
@@ -59,6 +102,8 @@ public class WeaponCombatController : MonoBehaviour
         StartCoroutine(FlashLight());
         _animator.SetTrigger("Shoot");
         RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_Fire");
+        AmmoCountInClip--;
+        OnAmmoChanged?.Invoke(new AmmoInfo(TotalAmmo, AmmoCountInClip));
         
         
         _cameraController.FovFade(_weaponFeedBackData.additionFov, _weaponFeedBackData.fadeInDuration, _weaponFeedBackData.fadeOutDuration);
@@ -82,5 +127,42 @@ public class WeaponCombatController : MonoBehaviour
         yield return new WaitForSeconds(lightDuration);
         
         _light.enabled = false;
+    }
+
+    public void ShowHands()
+    {
+        foreach (var VARIABLE in hands)
+        {
+            VARIABLE.SetActive(true);
+        }
+    }
+
+    public void HideHands()
+    {
+        foreach (var VARIABLE in hands)
+        {
+            VARIABLE.SetActive(false);
+        }
+    }
+
+    public void Enable()
+    {
+        enable = true;
+    }
+
+    public void Disable()
+    {
+        enable = false;
+    }
+}
+
+public struct AmmoInfo
+{
+    public int TotalAmmo;
+    public int AmmoCountInClip;
+    public AmmoInfo(int TotalAmmo, int AmmoCountInClip)
+    {
+        this.TotalAmmo = TotalAmmo;
+        this.AmmoCountInClip = AmmoCountInClip;
     }
 }
