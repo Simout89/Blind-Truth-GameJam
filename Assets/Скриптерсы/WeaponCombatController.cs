@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using FMODUnity;
+using Lean.Pool;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
@@ -112,6 +113,9 @@ public class WeaponCombatController : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 100, _layerMask, QueryTriggerInteraction.Ignore) && hit.collider.TryGetComponent(out IDamageable damageable))
         {
             Debug.Log(hit.collider.name);
+
+            LeanPool.Despawn(LeanPool.Spawn(_characterController.CharacterControllerData.bloodVfx, hit.point,
+                Quaternion.LookRotation(_characterController.transform.position), null), 3f);
 
             var damageInfo = new DamageInfo(_characterController.CharacterControllerData.Damage, "player", transform);
             
