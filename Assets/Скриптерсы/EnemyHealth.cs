@@ -10,6 +10,8 @@ namespace Скриптерсы
         private float currentHealth;
         public event Action<DamageInfo> OnTakeDamage;
         public event Action OnDeath;
+        
+        [SerializeField] private bool destroyOnDie;
 
         public void Init(EnemyData _enemyData)
         {
@@ -55,6 +57,11 @@ namespace Скриптерсы
                 
                 OnDeath?.Invoke();
                 // Destroy(gameObject);
+
+                if (destroyOnDie)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
