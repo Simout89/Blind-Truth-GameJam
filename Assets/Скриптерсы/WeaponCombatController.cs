@@ -25,6 +25,7 @@ public class WeaponCombatController : MonoBehaviour
     [Inject] private CameraController _cameraController;
 
     private bool enable = true;
+    private bool haveWeapon = false;
 
     public event Action<AmmoInfo> OnAmmoChanged;
     
@@ -49,6 +50,8 @@ public class WeaponCombatController : MonoBehaviour
     {
         if(!enable)
             return;
+        if(!haveWeapon)
+            return;
         Reload();
     }
 
@@ -56,6 +59,9 @@ public class WeaponCombatController : MonoBehaviour
     {
         if(!enable)
             return;
+        if(!haveWeapon)
+            return;
+        
         TryShoot();
     }
 
@@ -67,6 +73,9 @@ public class WeaponCombatController : MonoBehaviour
 
     public void Reload()
     {
+        if(!haveWeapon)
+            return;
+        
         if (AmmoCountInClip >= _characterController.CharacterControllerData.MaxAmmoInClip)
             return;
 
@@ -161,6 +170,12 @@ public class WeaponCombatController : MonoBehaviour
     public void Disable()
     {
         enable = false;
+    }
+
+    public void PickUpWeapon()
+    {
+        haveWeapon = true;
+        _animator.SetTrigger("PickUp");
     }
 }
 

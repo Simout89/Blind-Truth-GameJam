@@ -6,5 +6,6 @@ namespace Скриптерсы.Datas
     public class KeyItemData: ScriptableObject
     {
         [field: SerializeField] public string Name { get; private set; } = "www";
+        [field: SerializeField] public string PickUpSound { get; private set; }
     }
 }
