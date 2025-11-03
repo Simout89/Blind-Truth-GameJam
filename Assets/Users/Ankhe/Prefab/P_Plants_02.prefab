@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props
       objectReference: {fileID: 0}
+    - target: {fileID: 1191728439991758829, guid: 126b0829b8477d544bc1f47820836765, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6335602466637473643, guid: 126b0829b8477d544bc1f47820836765, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
