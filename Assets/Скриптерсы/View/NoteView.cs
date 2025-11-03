@@ -31,7 +31,7 @@ namespace Скриптерсы.View
         {
             note.SetActive(false);
             _gameStateManager.ChangeState(GameStates.Play);
-            if(lastData.soundAfterClose != "")
+            if(lastData != null && lastData.soundAfterClose != "")
                 RuntimeManager.PlayOneShot(lastData.soundAfterClose);
         }
     }
