@@ -152,11 +152,6 @@ Transform:
   - {fileID: 2121581685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -269.999, z: 0}
---- !u!1 &123344926 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1818095741045078353, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
-  m_PrefabInstance: {fileID: 5429426858228881663}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &166351563
 GameObject:
   m_ObjectHideFlags: 0
@@ -11136,11 +11131,6 @@ Transform:
   - {fileID: 841242210}
   m_Father: {fileID: 69138300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2129106575 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4678636795971824466, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
-  m_PrefabInstance: {fileID: 5429426858228881663}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5429426858228881663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11229,18 +11219,6 @@ PrefabInstance:
       propertyPath: passiveSwayAmount
       value: 0.01
       objectReference: {fileID: 0}
-    - target: {fileID: 8348726581898007952, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
-      propertyPath: hands.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8348726581898007952, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
-      propertyPath: 'hands.Array.data[0]'
-      value: 
-      objectReference: {fileID: 123344926}
-    - target: {fileID: 8348726581898007952, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
-      propertyPath: 'hands.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2129106575}
     - target: {fileID: 8671921914070350730, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -118.90039
