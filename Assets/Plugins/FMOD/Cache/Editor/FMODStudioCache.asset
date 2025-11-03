@@ -322,7 +322,7 @@ MonoBehaviour:
   - Grass
   - Gravel
   Exists: 1
---- !u!114 &-3144674251142778888
+--- !u!114 &-3526283909674938532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,23 +332,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Granny/gr_Cry
+  m_Name: event:/SFX/InGame/Granny/gr_Death
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Granny/gr_Cry
+  Path: event:/SFX/InGame/Granny/gr_Death
   Guid:
-    Data1: -1634867767
-    Data2: 1158273579
-    Data3: 1896422842
-    Data4: 1145445204
+    Data1: -1353576050
+    Data2: 1319229124
+    Data3: 1607966356
+    Data4: -733891688
   Banks:
   - {fileID: -2307731070035612492}
   IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
+  Is3D: 1
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 46524
+  Length: 8500
 --- !u!114 &-2922830820913859591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977427063298720
+  lastModified: 638977214798642295
   FileSizes: []
   Exists: 1
 --- !u!114 &-1719565130939531344
@@ -448,6 +448,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 0
+--- !u!114 &-40751110805453164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_Heal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_Heal
+  Guid:
+    Data1: -464179103
+    Data2: 1127112626
+    Data3: -384823893
+    Data4: -1048381992
+  Banks:
+  - {fileID: -2307731070035612492}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-35369156403610763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Granny/gr_Cry
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Granny/gr_Cry
+  Guid:
+    Data1: -1634867767
+    Data2: 1158273579
+    Data3: 1896422842
+    Data4: 1145445204
+  Banks:
+  - {fileID: -2307731070035612492}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 46524
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,11 +535,11 @@ MonoBehaviour:
   - {fileID: -2922830820913859591}
   - {fileID: 8577856909491121377}
   - {fileID: 8905398444110062958}
-  - {fileID: -8469870301880153171}
-  - {fileID: 315294865468917640}
-  - {fileID: 6502745127072422266}
-  - {fileID: -5624650621042802119}
-  - {fileID: -3144674251142778888}
+  - {fileID: -8837849201037784345}
+  - {fileID: -40751110805453164}
+  - {fileID: -3526283909674938532}
+  - {fileID: 196091582481324856}
+  - {fileID: -35369156403610763}
   EditorParameters:
   - {fileID: -3608105925200930205}
   - {fileID: 7930877211069065899}
@@ -494,9 +548,9 @@ MonoBehaviour:
   - {fileID: -2307731070035612492}
   StringsBanks:
   - {fileID: 7527393716066712367}
-  cacheTime: 638977427063298720
+  cacheTime: 638977214798704833
   cacheVersion: 131633
---- !u!114 &315294865468917640
+--- !u!114 &196091582481324856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -506,18 +560,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_Heal
+  m_Name: event:/SFX/InGame/Granny/gr_TakeDamage
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_Heal
+  Path: event:/SFX/InGame/Granny/gr_TakeDamage
   Guid:
-    Data1: -464179103
-    Data2: 1127112626
-    Data3: -384823893
-    Data4: -1048381992
+    Data1: 2020374717
+    Data2: 1183191224
+    Data3: -1275005772
+    Data4: 738494342
   Banks:
   - {fileID: -2307731070035612492}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -748,7 +802,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977416595557466
+  lastModified: 638977214798704833
   FileSizes:
   - Name: 
     Value: 2142
