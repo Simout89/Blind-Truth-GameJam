@@ -13,6 +13,8 @@ namespace Скриптерсы
         [SerializeField] private Image imageProgress;
         [SerializeField] private CanvasGroup rightEye;
         [SerializeField] private CanvasGroup leftEye;
+        [SerializeField] private GameObject rightBlack;
+        [SerializeField] private GameObject leftBlack;
         [SerializeField] private Animator _animator;
         
         
@@ -33,11 +35,17 @@ namespace Скриптерсы
         private void Awake()
         {
             HandleStop();
+            // Деактивируем черные объекты при запуске
+            rightBlack.SetActive(false);
+            leftBlack.SetActive(false);
         }
 
         private void HandleStart()
         {
             qteGameObject.SetActive(true);
+            // Сбрасываем черные объекты при старте нового QTE
+            rightBlack.SetActive(false);
+            leftBlack.SetActive(false);
             // Сбрасываем все триггеры перед установкой нового
             _animator.ResetTrigger("Stop");
             _animator.ResetTrigger("PlayLeftEye");
@@ -51,6 +59,9 @@ namespace Скриптерсы
             _animator.ResetTrigger("PlayRightEye");
             _animator.ResetTrigger("PlayLeftEye");
             _animator.SetTrigger("Stop");
+            // Деактивируем оба черных объекта при остановке
+            rightBlack.SetActive(false);
+            leftBlack.SetActive(false);
         }
 
         private void HandleValueChanged()
@@ -61,6 +72,7 @@ namespace Скриптерсы
             {
                 _animator.ResetTrigger("PlayRightEye");
                 _animator.SetTrigger("PlayLeftEye");
+                rightBlack.SetActive(true);
             }
         }
 
