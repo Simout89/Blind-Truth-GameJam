@@ -19,8 +19,11 @@ public class WeaponCombatController : MonoBehaviour
     [SerializeField] private Light _light;
     [SerializeField] private float lightDuration = 0.1f;
     [SerializeField] private Animator _animator;
+    [SerializeField] private GameObject[] hands;
     
     [Inject] private CameraController _cameraController;
+
+    private bool enable = true;
 
     public event Action<AmmoInfo> OnAmmoChanged;
     
@@ -43,11 +46,15 @@ public class WeaponCombatController : MonoBehaviour
 
     private void HandleReload(InputAction.CallbackContext obj)
     {
+        if(!enable)
+            return;
         Reload();
     }
 
     private void HandleAttack(InputAction.CallbackContext obj)
     {
+        if(!enable)
+            return;
         TryShoot();
     }
 
@@ -120,6 +127,32 @@ public class WeaponCombatController : MonoBehaviour
         yield return new WaitForSeconds(lightDuration);
         
         _light.enabled = false;
+    }
+
+    public void ShowHands()
+    {
+        foreach (var VARIABLE in hands)
+        {
+            VARIABLE.SetActive(true);
+        }
+    }
+
+    public void HideHands()
+    {
+        foreach (var VARIABLE in hands)
+        {
+            VARIABLE.SetActive(false);
+        }
+    }
+
+    public void Enable()
+    {
+        enable = true;
+    }
+
+    public void Disable()
+    {
+        enable = false;
     }
 }
 

@@ -13,6 +13,11 @@ namespace Скриптерсы
         [SerializeField] private float value = 5;
         private float currentValue = 0;
         [Inject] private IInputService _inputService;
+        [Inject] private GameStateManager gameStateManager;
+
+        public event Action OnStartQte;
+        public event Action OnStopQte;
+        public event Action OnValueChanged;
 
         private Coroutine qteFail;
         private Coroutine qte;
@@ -29,13 +34,18 @@ namespace Скриптерсы
 
         private void HandlePerformed(InputAction.CallbackContext obj)
         {
-            value += 1;
+            currentValue += 1;
+            OnValueChanged?.Invoke();
         }
 
         public void StartQTE()
         {
-            qte = StartCoroutine(QTE());
-            qteFail = StartCoroutine(QTEFailTimer());
+            if(qte == null && qteFail == null)
+            {
+                qte = StartCoroutine(QTE());
+                qteFail = StartCoroutine(QTEFailTimer());
+                gameStateManager.ChangeState(GameStates.QTE);
+            }
         }
 
         public void StopQTE()
@@ -45,22 +55,46 @@ namespace Скриптерсы
 
         private IEnumerator QTE()
         {
+            OnStartQte?.Invoke();
+            
             currentValue = 0;
 
             while (currentValue < value)
             {
-                currentValue = Mathf.Max(0, currentValue - Time.deltaTime);
+                currentValue = Mathf.Max(0, currentValue - Time.unscaledDeltaTime);
+                OnValueChanged?.Invoke();
                 yield return null;
             }
+            OnStopQte?.Invoke();
+            gameStateManager.ChangeState(GameStates.Play);
             
-            StopCoroutine(qteFail);
+            if(qteFail != null)
+            {
+                StopCoroutine(qteFail);
+                qteFail = null;
+            }
+            qte = null;
         }
 
         private IEnumerator QTEFailTimer()
         {
-            yield return new WaitForSeconds(timeOnQTE);
-            StopCoroutine(qte);
+            float elapsed = 0f;
             
+            while (elapsed < timeOnQTE)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                yield return null;
+            }
+            
+            OnStopQte?.Invoke();
+            gameStateManager.ChangeState(GameStates.Play);
+
+            if(qte != null)
+            {
+                StopCoroutine(qte);
+                qte = null;
+            }
+            qteFail = null;
         }
     }
 }

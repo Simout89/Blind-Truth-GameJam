@@ -42,7 +42,6 @@ namespace Скриптерсы.Interactable
                     return new ClickResult(false, false);
                 }
             }
-            Debug.Log("Все собрано");
             isSolved = true;
             OnSolved?.Invoke();
             if(CorrectEvent != "")
