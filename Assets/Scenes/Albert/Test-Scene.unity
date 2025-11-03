@@ -5081,23 +5081,6 @@ Transform:
   - {fileID: 1237278684}
   m_Father: {fileID: 427353177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1062030742 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 88506791629559705, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
-  m_PrefabInstance: {fileID: 5429426858228881663}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1062030756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062030742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58f53d27c726d5b4c94885ff4263c443, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PursuitHandler
 --- !u!1 &1089606447
 GameObject:
   m_ObjectHideFlags: 0
@@ -9148,7 +9131,7 @@ MonoBehaviour:
   - {fileID: 489003382}
   - {fileID: 2092173877}
   - {fileID: 841242210}
-  LoopPath: 0
+  LoopPath: 1
   EnemyHealth: {fileID: 1704133355}
   EnemyData: {fileID: 11400000, guid: d0bc0d98ac4e7d548999d31bfc308945, type: 2}
   currentPoint: 0
@@ -11211,14 +11194,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7753873982451038418, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
-      propertyPath: passiveSwaySpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7753873982451038418, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
-      propertyPath: passiveSwayAmount
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 8671921914070350730, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -118.90039
@@ -11226,10 +11201,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 88506791629559705, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1062030756}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eee7f10e247d5cf4fb1e990c02e7916b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
