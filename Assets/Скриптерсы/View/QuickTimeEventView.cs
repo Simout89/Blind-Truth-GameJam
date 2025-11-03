@@ -1,22 +1,28 @@
 ﻿using System;
 using DG.Tweening;
 using FMODUnity;
+using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
+using Random = UnityEngine.Random;
 
 namespace Скриптерсы
 {
     public class QuickTimeEventView: MonoBehaviour
     {
         [Inject] private QuickTimeEvent _quickTimeEvent;
+        [Inject] private GameStateManager _gameStateManager;
         [SerializeField] private GameObject qteGameObject;
         [SerializeField] private Image imageProgress;
         [SerializeField] private CanvasGroup rightEye;
         [SerializeField] private CanvasGroup leftEye;
         [SerializeField] private GameObject rightBlack;
         [SerializeField] private GameObject leftBlack;
+        [SerializeField] private GameObject blackScreen;
         [SerializeField] private Animator _animator;
+        [SerializeField] private CinemachineImpulseSource _impulseSource;
 
         private bool enable = false;
         
@@ -26,6 +32,8 @@ namespace Скриптерсы
             _quickTimeEvent.OnStartQte += HandleStart;
             _quickTimeEvent.OnStopQte += HandleStop;
             _quickTimeEvent.OnValueChanged += HandleValueChanged;
+
+            _quickTimeEvent.OnDone += HandleDone;
         }
         
         private void OnDisable()
@@ -33,6 +41,14 @@ namespace Скриптерсы
             _quickTimeEvent.OnStartQte -= HandleStart;
             _quickTimeEvent.OnStopQte -= HandleStop;
             _quickTimeEvent.OnValueChanged -= HandleValueChanged;
+            
+            _quickTimeEvent.OnDone -= HandleDone;
+        }
+
+        private void HandleDone()
+        {
+            _gameStateManager.ChangeState(GameStates.End);
+            blackScreen.SetActive(true);
         }
 
         private void Awake()
@@ -102,7 +118,7 @@ namespace Скриптерсы
             }
             
             RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_Stab");
-
+            _impulseSource.GenerateImpulse(Random.insideUnitSphere);
         }
     }
 

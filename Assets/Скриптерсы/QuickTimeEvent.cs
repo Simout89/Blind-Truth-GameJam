@@ -19,6 +19,7 @@ namespace Скриптерсы
         public event Action OnStartQte;
         public event Action OnStopQte;
         public event Action OnValueChanged;
+        public event Action OnDone;
 
         private Coroutine qteFail;
         private Coroutine qte;
@@ -74,6 +75,7 @@ namespace Скриптерсы
                 StopCoroutine(qteFail);
                 qteFail = null;
             }
+            OnDone?.Invoke();
             qte = null;
         }
 
