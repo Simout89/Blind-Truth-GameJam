@@ -418,7 +418,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977866129374799
+  lastModified: 638977891026115512
   FileSizes: []
   Exists: 1
 --- !u!114 &-1719565130939531344
@@ -572,6 +572,7 @@ MonoBehaviour:
   - {fileID: -5104158586420015012}
   - {fileID: -3403744573045797300}
   - {fileID: 4483439823675660778}
+  - {fileID: 4334882153184897199}
   EditorParameters:
   - {fileID: -3608105925200930205}
   - {fileID: 7930877211069065899}
@@ -581,7 +582,7 @@ MonoBehaviour:
   - {fileID: -2307731070035612492}
   StringsBanks:
   - {fileID: 7527393716066712367}
-  cacheTime: 638977866129455044
+  cacheTime: 638977891026255131
   cacheVersion: 131633
 --- !u!114 &196091582481324856
 MonoBehaviour:
@@ -731,6 +732,33 @@ MonoBehaviour:
     Data2: 1163731084
     Data3: -186650975
     Data4: 1737337450
+  Banks:
+  - {fileID: -2307731070035612492}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4334882153184897199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_Stab
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_Stab
+  Guid:
+    Data1: 819002642
+    Data2: 1084554085
+    Data3: -1484004196
+    Data4: -1103710053
   Banks:
   - {fileID: -2307731070035612492}
   IsStream: 0
@@ -913,10 +941,10 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977866129455044
+  lastModified: 638977891026255131
   FileSizes:
   - Name: 
-    Value: 2392
+    Value: 2428
   Exists: 1
 --- !u!114 &7534888933515609563
 MonoBehaviour:
