@@ -5050,8 +5050,8 @@ MonoBehaviour:
   movementSwaySpeed: 5
   movementBobAmount: 0.02
   enablePassiveSway: 1
-  passiveSwayAmount: 0.005
-  passiveSwaySpeed: 1
+  passiveSwayAmount: 0.01
+  passiveSwaySpeed: 4
 --- !u!95 &1338566485679840105
 Animator:
   serializedVersion: 7
