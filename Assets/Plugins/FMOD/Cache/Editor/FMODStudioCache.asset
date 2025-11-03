@@ -109,6 +109,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 70291
+--- !u!114 &-7822684510302099188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/VoiceLines/p_NoKey
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/VoiceLines/p_NoKey
+  Guid:
+    Data1: -921038492
+    Data2: 1273217090
+    Data3: -65784448
+    Data4: 968115937
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7032668312739006451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +246,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 60
   Length: 4182
+--- !u!114 &-4584355642735345417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/VoiceLines/p_Emblem
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/VoiceLines/p_Emblem
+  Guid:
+    Data1: -1756998872
+    Data2: 1311797154
+    Data3: 561303206
+    Data4: -618757139
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4348394102023048894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,11 +288,38 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638978139597896454
+  lastModified: 638978182171774228
   FileSizes:
   - Name: 
-    Value: 2428
+    Value: 2668
   Exists: 1
+--- !u!114 &-1608146978992889743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/VoiceLines/p_Babka
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/VoiceLines/p_Babka
+  Guid:
+    Data1: -1146938923
+    Data2: 1225306190
+    Data3: 1618529175
+    Data4: 1802825498
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-985583170767395095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +472,6 @@ MonoBehaviour:
   - {fileID: -4893393899103400527}
   - {fileID: 938646014973528639}
   - {fileID: -332410242168518359}
-  - {fileID: 2429433233219157417}
   - {fileID: 421782756357770394}
   - {fileID: -5665592285674068797}
   - {fileID: -9056371039619381712}
@@ -415,6 +495,12 @@ MonoBehaviour:
   - {fileID: 6144773043561738082}
   - {fileID: 5234917348815157524}
   - {fileID: -650450831686047941}
+  - {fileID: 7671745136282461157}
+  - {fileID: 8335814288627714754}
+  - {fileID: -4584355642735345417}
+  - {fileID: -7822684510302099188}
+  - {fileID: 6919684048281918932}
+  - {fileID: -1608146978992889743}
   EditorParameters:
   - {fileID: 1654891433697468468}
   - {fileID: 5199305913544672542}
@@ -424,7 +510,7 @@ MonoBehaviour:
   - {fileID: 3206694555944759032}
   StringsBanks:
   - {fileID: -4348394102023048894}
-  cacheTime: 638978142706211161
+  cacheTime: 638978182171774228
   cacheVersion: 131633
 --- !u!114 &236038608600948904
 MonoBehaviour:
@@ -718,33 +804,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &2429433233219157417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_NoAmmo
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_NoAmmo
-  Guid:
-    Data1: 913899346
-    Data2: 1323085366
-    Data3: -674390349
-    Data4: -588239799
-  Banks:
-  - {fileID: 3206694555944759032}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &3036449352417802420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,7 +846,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638978142706211161
+  lastModified: 638978182171673816
   FileSizes: []
   Exists: 1
 --- !u!114 &3976135349645162472
@@ -1078,6 +1137,87 @@ MonoBehaviour:
   - {fileID: 3206694555944759032}
   IsStream: 0
   Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6919684048281918932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/VoiceLines/p_Notes
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/VoiceLines/p_Notes
+  Guid:
+    Data1: 856802927
+    Data2: 1286737194
+    Data3: -1854609521
+    Data4: -811261474
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7671745136282461157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/VoiceLines/p_EndGame
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/VoiceLines/p_EndGame
+  Guid:
+    Data1: 243636761
+    Data2: 1233520083
+    Data3: -1437062484
+    Data4: -1055317982
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8335814288627714754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/VoiceLines/p_Start
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/VoiceLines/p_Start
+  Guid:
+    Data1: -1739308763
+    Data2: 1218829894
+    Data3: 217911968
+    Data4: -2052840732
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
