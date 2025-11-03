@@ -11,6 +11,7 @@ namespace Скриптерсы.Datas
         [field: SerializeField] public float Damage { get; private set; } = 1;
         [field: SerializeField] public int MaxAmmoInClip { get; private set; } = 7;
         [field: SerializeField] public float DelayBetweenShots { get; private set; } = 1f;
+        [field: SerializeField] public float ReloadTime { get; private set; } = 2f;
         [field: SerializeField] public GameObject bloodVfx { get; private set; }
         [field: Header("Move")]
         [field: SerializeField] public float MoveSpeed { get; private set; } = 5f;

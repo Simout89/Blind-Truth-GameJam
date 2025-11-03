@@ -16,6 +16,7 @@ MonoBehaviour:
   <Damage>k__BackingField: 1
   <MaxAmmoInClip>k__BackingField: 7
   <DelayBetweenShots>k__BackingField: 0.5
+  <ReloadTime>k__BackingField: 2.3
   <bloodVfx>k__BackingField: {fileID: 8104814865438400875, guid: 3f84bf1604c15ae4dbbab84f7c08f5fd, type: 3}
   <MoveSpeed>k__BackingField: 5
   <Gravity>k__BackingField: -9.81
