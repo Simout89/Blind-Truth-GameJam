@@ -16,6 +16,8 @@ namespace Скриптерсы
         [SerializeField] private GameObject rightBlack;
         [SerializeField] private GameObject leftBlack;
         [SerializeField] private Animator _animator;
+
+        private bool enable = false;
         
         
         private void OnEnable()
@@ -42,6 +44,8 @@ namespace Скриптерсы
 
         private void HandleStart()
         {
+            enable = true;
+            
             qteGameObject.SetActive(true);
             // Сбрасываем черные объекты при старте нового QTE
             rightBlack.SetActive(false);
@@ -54,6 +58,8 @@ namespace Скриптерсы
 
         private void HandleStop()
         {
+            enable = false;
+            
             qteGameObject.SetActive(false);
             // Сбрасываем все активные триггеры перед остановкой
             _animator.ResetTrigger("PlayRightEye");
@@ -66,6 +72,9 @@ namespace Скриптерсы
 
         private void HandleValueChanged()
         {
+            if(!enable)
+                return;
+            
             imageProgress.fillAmount = _quickTimeEvent.currentValue / _quickTimeEvent.QuickTimeEventData.MaxValue;
 
             if (_quickTimeEvent.currentValue >= _quickTimeEvent.QuickTimeEventData.MaxValue / 2)
