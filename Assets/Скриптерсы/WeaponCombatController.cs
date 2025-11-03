@@ -87,7 +87,10 @@ public class WeaponCombatController : MonoBehaviour
     private void TryShoot()
     {
         if(AmmoCountInClip <= 0)
+        {
+            RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_NoAmmo");
             return;
+        }
         
         if (Time.time < _nextFireTime)
         {

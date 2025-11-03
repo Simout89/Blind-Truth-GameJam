@@ -1,4 +1,5 @@
 ﻿using System;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -11,6 +12,7 @@ namespace Скриптерсы.View
         [SerializeField] private GameObject note;
         [SerializeField] private TMP_Text _text;
         [Inject] private GameStateManager _gameStateManager;
+        private NoteData lastData;
 
         private void Awake()
         {
@@ -22,12 +24,15 @@ namespace Скриптерсы.View
             note.SetActive(true);
             _text.text = noteData.text;
             _gameStateManager.ChangeState(GameStates.Note);
+            lastData = noteData;
         }
 
         public void Hide()
         {
             note.SetActive(false);
             _gameStateManager.ChangeState(GameStates.Play);
+            if(lastData.soundAfterClose != "")
+                RuntimeManager.PlayOneShot(lastData.soundAfterClose);
         }
     }
 }

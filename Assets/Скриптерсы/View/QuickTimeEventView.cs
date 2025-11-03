@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -99,6 +100,9 @@ namespace Скриптерсы
                 leftEye.DOComplete();
                 leftEye.DOFade(0, 0.2f);
             }
+            
+            RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_Stab");
+
         }
     }
 
