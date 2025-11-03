@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using FMOD.Studio;
 using FMODUnity;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -7,6 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 using Random = UnityEngine.Random;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Скриптерсы
 {
@@ -25,6 +27,9 @@ namespace Скриптерсы
         [SerializeField] private CinemachineImpulseSource _impulseSource;
 
         private bool enable = false;
+
+
+        private EventInstance _eventInstance;
         
         
         private void OnEnable()
@@ -62,6 +67,8 @@ namespace Скриптерсы
         private void HandleStart()
         {
             enable = true;
+            _eventInstance = RuntimeManager.CreateInstance("event:/SFX/InGame/Player/p_Scream");
+            _eventInstance.start();
             
             qteGameObject.SetActive(true);
             // Сбрасываем черные объекты при старте нового QTE
@@ -76,6 +83,8 @@ namespace Скриптерсы
         private void HandleStop()
         {
             enable = false;
+
+            _eventInstance.stop(STOP_MODE.ALLOWFADEOUT);
             
             qteGameObject.SetActive(false);
             // Сбрасываем все активные триггеры перед остановкой
