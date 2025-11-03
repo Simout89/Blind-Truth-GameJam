@@ -40,6 +40,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7765072550442930841}
     m_Modifications:
+    - target: {fileID: -8878621176622154012, guid: 29825e4625846ba41be7a2a61cc207cb, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29825e4625846ba41be7a2a61cc207cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.074897766

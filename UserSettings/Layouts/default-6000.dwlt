@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -1343,24 +1343,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 1904}
+      scrollPos: {x: 0, y: 10210}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 46e5fbffea66fcffee66fcfff845fdfffc45fdffc001ffff90acffff92acffff14c7ffff9ae8ffff9ce8fffffcfaffff3acc000056cd0000aece000040cf0000d4cf0000f0d10000
+      m_ExpandedIDs: 9a4cfcff9c4cfcff40b0fdff44b0fdff70b0fdff74b0fdff20b2fdff24b2fdff50b2fdfff0b2fdfff4b2fdff28b3fdff2cb3fdff5cb3fdff60b3fdff6cafffff74afffff78afffff7cafffff80afffff84afffff88afffff08b1ffff0cb1ffff86b3ffff8ab3ffff74b4ffff78b4ffff5abaffff5ebaffffaac0fffffec2ffff92c5ffff96c5ffff42cdffffc0d1ffffc4d1ffffd6dcffffdadcffff64ddffff66ddffffcaddffff3cd9000014db00009adc000062dd00007ee10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Coffin
+        m_OriginalName: Coffin
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -93208
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 9}
@@ -2041,9 +2041,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -46.869835, y: -1.330582, z: 19.49268}
+    m_Target: {x: -34.661137, y: 10.329433, z: 15.7914095}
     speed: 2
-    m_Value: {x: -46.869835, y: -1.330582, z: 19.49268}
+    m_Value: {x: -34.661137, y: 10.329433, z: 15.7914095}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2089,13 +2089,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.20814756, y: -0.6592747, z: 0.19845678, w: 0.6951698}
+    m_Target: {x: 0.0487136, y: 0.9330322, z: -0.13096929, w: 0.33291218}
     speed: 2
-    m_Value: {x: 0.20778579, y: -0.6601138, z: 0.19870771, w: 0.69396687}
+    m_Value: {x: 0.048495132, y: 0.9331081, z: -0.1309829, w: 0.33136222}
   m_Size:
-    m_Target: 8.110722
+    m_Target: 1.33684
     speed: 2
-    m_Value: 1.3427207
+    m_Value: 1.33684
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2284,7 +2284,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Users/Ankhe/Prefab
+    - Assets/Users/Ankhe/Textures/BusStop
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -2294,16 +2294,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 67
   m_LastFolders:
-  - Assets/Users/Ankhe/Prefab
+  - Assets/Users/Ankhe/Textures/BusStop
   m_LastFoldersGridSize: 67
   m_LastProjectPath: D:\UnityGayStar\Pantomime
   m_LockTracker:
-    m_IsLocked: 1
+    m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 302}
-    m_SelectedIDs: c8da0000
-    m_LastClickedID: 56008
-    m_ExpandedIDs: 00000000b2d90000bada0000c2da0000cada000000ca9a3b
+    m_SelectedIDs: deea0000
+    m_LastClickedID: 60126
+    m_ExpandedIDs: 000000001eea000020ea000022ea000024ea000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2332,7 +2332,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b2d90000
+    m_ExpandedIDs: 000000001eea000020ea000022ea000024ea0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

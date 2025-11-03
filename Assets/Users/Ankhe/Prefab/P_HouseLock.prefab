@@ -342,6 +342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PSX Abandoned House
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fcae58b4609dc414397a9eb3e6d2b21b, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
