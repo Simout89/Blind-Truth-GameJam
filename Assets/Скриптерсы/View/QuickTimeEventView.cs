@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Скриптерсы
@@ -8,6 +9,7 @@ namespace Скриптерсы
     {
         [Inject] private QuickTimeEvent _quickTimeEvent;
         [SerializeField] private GameObject qteGameObject;
+        [SerializeField] private Image imageProgress;
 
         private void OnEnable()
         {
@@ -40,7 +42,7 @@ namespace Скриптерсы
 
         private void HandleValueChanged()
         {
-            
+            imageProgress.fillAmount = _quickTimeEvent.currentValue / _quickTimeEvent.QuickTimeEventData.MaxValue;
         }
     }
 }
