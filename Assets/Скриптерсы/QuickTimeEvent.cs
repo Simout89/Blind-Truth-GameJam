@@ -2,16 +2,17 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using Zenject;
+using Скриптерсы.Datas;
 using Скриптерсы.Services;
 
 namespace Скриптерсы
 {
     public class QuickTimeEvent: MonoBehaviour
     {
-        [SerializeField] private float timeOnQTE = 5f;  
-        [SerializeField] private float value = 5;
-        private float currentValue = 0;
+        [field: SerializeField] public QuickTimeEventData QuickTimeEventData { get; private set; }
+        public float currentValue { get; private set; } = 0;
         [Inject] private IInputService _inputService;
         [Inject] private GameStateManager gameStateManager;
 
@@ -34,7 +35,7 @@ namespace Скриптерсы
 
         private void HandlePerformed(InputAction.CallbackContext obj)
         {
-            currentValue += 1;
+            currentValue += QuickTimeEventData.RateOfIncrease;
             OnValueChanged?.Invoke();
         }
 
@@ -59,9 +60,9 @@ namespace Скриптерсы
             
             currentValue = 0;
 
-            while (currentValue < value)
+            while (currentValue < QuickTimeEventData.MaxValue)
             {
-                currentValue = Mathf.Max(0, currentValue - Time.unscaledDeltaTime);
+                currentValue = Mathf.Max(0, currentValue - Time.unscaledDeltaTime * QuickTimeEventData.RateOfDecrease);
                 OnValueChanged?.Invoke();
                 yield return null;
             }
@@ -80,7 +81,7 @@ namespace Скриптерсы
         {
             float elapsed = 0f;
             
-            while (elapsed < timeOnQTE)
+            while (elapsed < QuickTimeEventData.TimeOnQTE)
             {
                 elapsed += Time.unscaledDeltaTime;
                 yield return null;

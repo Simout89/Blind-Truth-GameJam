@@ -2,21 +2,28 @@ using UnityEngine;
 
 public class InfiniteScroller : MonoBehaviour
 {
-    public Transform[] segments;  // 2 или 3 сегмента окружения
+    [Tooltip("Сегменты окружения, стоящие в ряд по оси X")]
+    public Transform[] segments;
+
+    [Tooltip("Скорость движения фона влево")]
     public float scrollSpeed = 10f;
+
+    [Tooltip("Длина одного сегмента по оси X")]
     public float segmentLength = 50f;
 
     void Update()
     {
         foreach (var seg in segments)
         {
-            seg.Translate(Vector3.back * scrollSpeed * Time.deltaTime, Space.World);
+            // Двигаем сегмент влево
+            seg.Translate(Vector3.left * scrollSpeed * Time.deltaTime, Space.World);
 
-            // Если сегмент уходит за камеру — перемещаем его вперёд
-            if (seg.position.z < -segmentLength)
+            // Если сегмент полностью ушёл за левый край — переносим его вперёд
+            if (seg.position.x < -segmentLength)
             {
-                float newZ = seg.position.z + segmentLength * segments.Length;
-                seg.position = new Vector3(seg.position.x, seg.position.y, newZ);
+                // Новый X = текущий X + общая длина всех сегментов
+                float newX = seg.position.x + segmentLength * segments.Length;
+                seg.position = new Vector3(newX, seg.position.y, seg.position.z);
             }
         }
     }

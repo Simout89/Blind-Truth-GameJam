@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using FMODUnity;
+using Lean.Pool;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
@@ -86,7 +87,10 @@ public class WeaponCombatController : MonoBehaviour
     private void TryShoot()
     {
         if(AmmoCountInClip <= 0)
+        {
+            RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_NoAmmo");
             return;
+        }
         
         if (Time.time < _nextFireTime)
         {
@@ -112,6 +116,10 @@ public class WeaponCombatController : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 100, _layerMask, QueryTriggerInteraction.Ignore) && hit.collider.TryGetComponent(out IDamageable damageable))
         {
             Debug.Log(hit.collider.name);
+
+            Vector3 directionToCamera = (camera.transform.position - hit.point).normalized;
+            LeanPool.Despawn(LeanPool.Spawn(_characterController.CharacterControllerData.bloodVfx, hit.point,
+                Quaternion.LookRotation(directionToCamera), null), 3f);
 
             var damageInfo = new DamageInfo(_characterController.CharacterControllerData.Damage, "player", transform);
             
