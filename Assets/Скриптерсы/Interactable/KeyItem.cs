@@ -13,7 +13,7 @@ namespace Скриптерсы.Interactable
         {
             _playerInteraction.AddKey(_keyItemData);
             
-            if(string.IsNullOrEmpty(_keyItemData.PickUpSound))
+            if(!string.IsNullOrEmpty(_keyItemData.PickUpSound))
                 RuntimeManager.PlayOneShot(_keyItemData.PickUpSound);
             
             Destroy(gameObject);
