@@ -6,5 +6,6 @@ namespace Скриптерсы.Datas
     public class NoteData: ScriptableObject
     {
         [field: SerializeField][field: TextArea] public string text { get; private set; }
+        [field: SerializeField] public string soundAfterClose { get; private set; }
     }
 }
