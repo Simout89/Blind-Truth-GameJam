@@ -26,12 +26,13 @@ public class WeaponCombatController : MonoBehaviour
 
     private bool enable = true;
     private bool haveWeapon = false;
+    private bool isReloading = false;
 
     public event Action<AmmoInfo> OnAmmoChanged;
     
     private int TotalAmmo = 0;
     private int AmmoCountInClip = 0;
-    private float _nextFireTime = 0f; // Время следующего возможного выстрела
+    private float _nextFireTime = 0f;
 
     private void OnEnable()
     {
@@ -76,25 +77,44 @@ public class WeaponCombatController : MonoBehaviour
         if(!haveWeapon)
             return;
         
+        if (isReloading)
+            return;
+        
         if (AmmoCountInClip >= _characterController.CharacterControllerData.MaxAmmoInClip)
             return;
 
         if (TotalAmmo <= 0)
             return;
+        
+        StartCoroutine(ReloadCoroutine());
+    }
+
+    private IEnumerator ReloadCoroutine()
+    {
+        isReloading = true;
+        
+        _animator.SetTrigger("Reload");
+        RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_Reload");
+
+        yield return new WaitForSeconds(_characterController.CharacterControllerData.ReloadTime);
 
         int neededAmmo = _characterController.CharacterControllerData.MaxAmmoInClip - AmmoCountInClip;
-
         int ammoToLoad = Mathf.Min(neededAmmo, TotalAmmo);
 
         AmmoCountInClip += ammoToLoad;
         TotalAmmo -= ammoToLoad;
-        RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_Reload");
+        
         OnAmmoChanged?.Invoke(new AmmoInfo(TotalAmmo, AmmoCountInClip));
+        
+        isReloading = false;
     }
 
 
     private void TryShoot()
     {
+        if(isReloading)
+            return;
+        
         if(AmmoCountInClip <= 0)
         {
             RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_NoAmmo");
@@ -140,7 +160,6 @@ public class WeaponCombatController : MonoBehaviour
     {
         _light.enabled = true;
         
-        // Ждём указанное количество секунд
         yield return new WaitForSeconds(lightDuration);
         
         _light.enabled = false;
