@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ac4df88ca84604a3b5d81c8b963ce5, type: 3}
   m_Name: Quick Time Event Data
   m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.Datas.QuickTimeEventData"
-  <TimeOnQTE>k__BackingField: 15
+  <TimeOnQTE>k__BackingField: Infinity
   <MaxValue>k__BackingField: 15
   <RateOfDecrease>k__BackingField: 1
   <RateOfIncrease>k__BackingField: 0.5
