@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2432450171853959949, guid: 1be133cb862d38d4192472321a9dd2df, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1be133cb862d38d4192472321a9dd2df, type: 3}
       propertyPath: m_Name
       value: HouseUse

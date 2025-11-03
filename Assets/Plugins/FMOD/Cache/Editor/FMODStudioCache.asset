@@ -18,7 +18,8 @@ MonoBehaviour:
     Data2: 1118196629
     Data3: -1942309972
     Data4: 758363524
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -26,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &-8837849201037784345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_NoAmmo
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_NoAmmo
+  Guid:
+    Data1: 913899346
+    Data2: 1323085366
+    Data3: -674390349
+    Data4: -588239799
+  Banks:
+  - {fileID: -2307731070035612492}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8513715963636522097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,7 +72,8 @@ MonoBehaviour:
     Data2: 1243549139
     Data3: -1972161388
     Data4: 165156021
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -78,33 +107,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-8469870301880153171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Player/p_NoAmmo
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Player/p_NoAmmo
-  Guid:
-    Data1: 913899346
-    Data2: 1323085366
-    Data3: -674390349
-    Data4: -588239799
-  Banks:
-  - {fileID: -2307731070035612492}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-6678459353873345878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +125,8 @@ MonoBehaviour:
     Data2: 1108205646
     Data3: -1858984023
     Data4: 1659988901
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -149,41 +152,15 @@ MonoBehaviour:
     Data2: 1270203509
     Data3: -1030177359
     Data4: -2017092604
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 15
-  Length: 97778
---- !u!114 &-5624650621042802119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Granny/gr_TakeDamage
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Granny/gr_TakeDamage
-  Guid:
-    Data1: 2020374717
-    Data2: 1183191224
-    Data3: -1275005772
-    Data4: 738494342
-  Banks:
-  - {fileID: -2307731070035612492}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 97778
 --- !u!114 &-5144287216259604678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +179,8 @@ MonoBehaviour:
     Data2: 1253458387
     Data3: -1705420102
     Data4: 1975863837
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -228,7 +206,8 @@ MonoBehaviour:
     Data2: 1153692203
     Data3: -1570609000
     Data4: -768271396
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -254,7 +233,8 @@ MonoBehaviour:
     Data2: 1139269891
     Data3: -1594130527
     Data4: -508679309
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -314,7 +294,7 @@ MonoBehaviour:
   - Stone
   - Grass
   - Gravel
-  Exists: 0
+  Exists: 1
 --- !u!114 &-3526283909674938532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,13 +340,14 @@ MonoBehaviour:
     Data2: 1257383739
     Data3: 2136345524
     Data4: 286056499
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 15
+  MaxDistance: 20
   Length: 21163
 --- !u!114 &-2307731070035612492
 MonoBehaviour:
@@ -383,7 +364,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977940351016424
+  lastModified: 638977835164958084
   FileSizes: []
   Exists: 1
 --- !u!114 &-1719565130939531344
@@ -404,7 +385,8 @@ MonoBehaviour:
     Data2: 1264911215
     Data3: -1273208440
     Data4: 389986566
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -412,6 +394,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1681442121144694033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fight
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Fight
+  StudioPath: parameter:/Fight
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1942404122
+    data2: 2124486142
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-259094804506992645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +436,8 @@ MonoBehaviour:
     Data2: 1248501348
     Data3: -1068088916
     Data4: 10839957
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -534,11 +541,12 @@ MonoBehaviour:
   - {fileID: -3608105925200930205}
   - {fileID: 7930877211069065899}
   - {fileID: 6940776458111546064}
+  - {fileID: -1681442121144694033}
   MasterBanks:
   - {fileID: -2307731070035612492}
   StringsBanks:
   - {fileID: 7527393716066712367}
-  cacheTime: 638977940351026455
+  cacheTime: 638977835164958084
   cacheVersion: 131633
 --- !u!114 &196091582481324856
 MonoBehaviour:
@@ -588,7 +596,7 @@ MonoBehaviour:
     data1: 1942404122
     data2: 2124486142
   Type: 0
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &2132480148712506434
@@ -609,7 +617,8 @@ MonoBehaviour:
     Data2: 1292072528
     Data3: 918072237
     Data4: 1596599610
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -635,7 +644,8 @@ MonoBehaviour:
     Data2: 1161611052
     Data3: -738500448
     Data4: -97916526
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -686,7 +696,8 @@ MonoBehaviour:
     Data2: 1163731084
     Data3: -186650975
     Data4: 1737337450
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -694,33 +705,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6502745127072422266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/InGame/Granny/gr_Death
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/InGame/Granny/gr_Death
-  Guid:
-    Data1: -1353576050
-    Data2: 1319229124
-    Data3: 1607966356
-    Data4: -733891688
-  Banks:
-  - {fileID: -2307731070035612492}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 8500
 --- !u!114 &6940776458111546064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,7 +728,7 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 1
   Labels: []
-  Exists: 0
+  Exists: 1
 --- !u!114 &7441276253844827669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,7 +747,8 @@ MonoBehaviour:
     Data2: 1113842150
     Data3: 1487135674
     Data4: -270872958
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -788,7 +773,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977940351026455
+  lastModified: 638977662057452179
   FileSizes:
   - Name: 
     Value: 2142
@@ -845,7 +830,7 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 1
   Labels: []
-  Exists: 0
+  Exists: 1
 --- !u!114 &8071723835681206079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,7 +849,8 @@ MonoBehaviour:
     Data2: 1149791596
     Data3: 1356368827
     Data4: 1550737284
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -890,7 +876,8 @@ MonoBehaviour:
     Data2: 1267651983
     Data3: -169369725
     Data4: 1634595467
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -916,7 +903,8 @@ MonoBehaviour:
     Data2: 1323838117
     Data3: -1260048471
     Data4: 1427321500
-  Banks: []
+  Banks:
+  - {fileID: -2307731070035612492}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
