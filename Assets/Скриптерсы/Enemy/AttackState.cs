@@ -25,6 +25,9 @@ namespace Скриптерсы.Enemy
             _enemyBase.navMeshAgent.destination = _enemyBase.transform.position;
             _enemyBase.navMeshAgent.isStopped = true;
             
+            _enemyBase.PlayerTransform.GetComponent<PursuitHandler>().StartPursuit(_enemyBase);
+
+            
             if(_coroutine == null)
                 _coroutine = _enemyBase.StartCoroutine(Attack());
         }

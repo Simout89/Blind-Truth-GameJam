@@ -16,6 +16,8 @@ namespace Скриптерсы.Enemy
         public override void Enter()
         {
             base.Enter();
+
+            _enemyBase.PlayerTransform.GetComponent<PursuitHandler>().StartPursuit(_enemyBase);
             
             _enemyBase.Animator.SetBool("Pursuit", true);
             _enemyBase.navMeshAgent.speed = _enemyBase.EnemyData.PursuitSpeed;
