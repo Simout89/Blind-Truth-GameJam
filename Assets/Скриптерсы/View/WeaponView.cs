@@ -13,16 +13,25 @@ namespace Скриптерсы.View
         private void OnEnable()
         {
             _weaponCombatController.OnAmmoChanged += HandleAmmoChanged;
+            _weaponCombatController.OnWeaponPickUp += HandlePickUp;
         }
 
         private void OnDisable()
         {
             _weaponCombatController.OnAmmoChanged -= HandleAmmoChanged;
+            _weaponCombatController.OnWeaponPickUp -= HandlePickUp;
+
+        }
+
+        private void HandlePickUp()
+        {
+            _tmpText.gameObject.SetActive(true);
         }
 
         private void Awake()
         {
             _tmpText.text = $"{0}/{0}";
+            _tmpText.gameObject.SetActive(false);
         }
 
         private void HandleAmmoChanged(AmmoInfo obj)

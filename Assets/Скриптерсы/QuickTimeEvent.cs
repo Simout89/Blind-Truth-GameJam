@@ -15,10 +15,12 @@ namespace Скриптерсы
         public float currentValue { get; private set; } = 0;
         [Inject] private IInputService _inputService;
         [Inject] private GameStateManager gameStateManager;
+        [Inject] private PursuitHandler _pursuitHandler;
 
         public event Action OnStartQte;
         public event Action OnStopQte;
         public event Action OnValueChanged;
+        public event Action OnDone;
 
         private Coroutine qteFail;
         private Coroutine qte;
@@ -46,6 +48,7 @@ namespace Скриптерсы
                 qte = StartCoroutine(QTE());
                 qteFail = StartCoroutine(QTEFailTimer());
                 gameStateManager.ChangeState(GameStates.QTE);
+                _pursuitHandler.PlayMusic();
             }
         }
 
@@ -74,6 +77,9 @@ namespace Скриптерсы
                 StopCoroutine(qteFail);
                 qteFail = null;
             }
+            OnDone?.Invoke();
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
+
             qte = null;
         }
 

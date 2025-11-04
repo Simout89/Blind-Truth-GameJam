@@ -1,6 +1,7 @@
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Скриптерсы
 {
@@ -28,6 +29,8 @@ namespace Скриптерсы
             if (currentHealth <= 0)
             {
                 Debug.Log("Смерть");
+
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
 

@@ -10,11 +10,19 @@ namespace Скриптерсы
         private float currentHealth;
         public event Action<DamageInfo> OnTakeDamage;
         public event Action OnDeath;
+        
+        [SerializeField] private bool destroyOnDie;
 
         public void Init(EnemyData _enemyData)
         {
             currentHealth = _enemyData.Health;
         }
+        
+        public void Init(int MaxHealth)
+        {
+            currentHealth = MaxHealth;
+        }
+
 
         private void OnEnable()
         {
@@ -55,6 +63,11 @@ namespace Скриптерсы
                 
                 OnDeath?.Invoke();
                 // Destroy(gameObject);
+
+                if (destroyOnDie)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
