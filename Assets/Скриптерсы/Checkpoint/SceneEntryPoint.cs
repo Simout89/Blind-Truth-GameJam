@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using Zenject;
+using Скриптерсы.View;
 
 namespace Скриптерсы
 {
@@ -10,11 +11,15 @@ namespace Скриптерсы
         [Inject] private CameraController _cameraController;
         [Inject] private WeaponCombatController _weaponCombatController;
         [Inject] private SaveRepository _saveRepository;
+        [Inject] private DeathView _deathView;
         
         public void Awake()
         {
             if(_saveRepository.PlayerSave is null)
+            {
                 return;
+            }
+            _deathView.Respawn();
             
             _characterController.Teleport(_saveRepository.PlayerSave.position);
             _cameraController.SetPanTilt(_saveRepository.PlayerSave.panTilt);
