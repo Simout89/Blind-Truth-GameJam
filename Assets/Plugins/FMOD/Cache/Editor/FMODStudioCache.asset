@@ -109,6 +109,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 70291
+--- !u!114 &-7644442734879554043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GameFinal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: GameFinal
+  StudioPath: parameter:/GameFinal
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4136692820
+    data2: 634646977
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-7516407947642539467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +238,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 0
+--- !u!114 &-6335462749340527160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FinalGame/GameFinal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: GameFinal
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4136692820
+    data2: 634646977
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-5665592285674068797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,10 +360,10 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638978529198083260
+  lastModified: 638978593626226325
   FileSizes:
   - Name: 
-    Value: 3004
+    Value: 3172
   Exists: 1
 --- !u!114 &-2295204205336815708
 MonoBehaviour:
@@ -555,17 +603,21 @@ MonoBehaviour:
   - {fileID: -6735483152195975806}
   - {fileID: -5148555091011199763}
   - {fileID: 6155360329080934681}
+  - {fileID: 5196556358496175983}
+  - {fileID: 4641503853374544504}
+  - {fileID: 5515212208729380807}
   EditorParameters:
   - {fileID: 1654891433697468468}
   - {fileID: 5199305913544672542}
   - {fileID: -426447790240968399}
   - {fileID: 6147592906114050055}
   - {fileID: 7605515880478567779}
+  - {fileID: -7644442734879554043}
   MasterBanks:
   - {fileID: 3206694555944759032}
   StringsBanks:
   - {fileID: -4348394102023048894}
-  cacheTime: 638978529198083260
+  cacheTime: 638978593626226325
   cacheVersion: 131633
 --- !u!114 &40438198268885274
 MonoBehaviour:
@@ -983,7 +1035,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638978529198013298
+  lastModified: 638978593626106384
   FileSizes: []
   Exists: 1
 --- !u!114 &3976135349645162472
@@ -1040,6 +1092,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 46524
+--- !u!114 &4641503853374544504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/FightMusic
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/FightMusic
+  Guid:
+    Data1: -1223451331
+    Data2: 1128018296
+    Data3: -1175423851
+    Data4: -1432873714
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5666220392644045634}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22325
 --- !u!114 &4786565611425270681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1096,6 +1176,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5196556358496175983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/FinalGame
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/FinalGame
+  Guid:
+    Data1: -1664567539
+    Data2: 1329012313
+    Data3: -1559904341
+    Data4: -1173437206
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6335462749340527160}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24593
 --- !u!114 &5199305913544672542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,6 +1282,57 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &5515212208729380807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InGame/Player/p_Death
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/InGame/Player/p_Death
+  Guid:
+    Data1: -916165336
+    Data2: 1327130906
+    Data3: -1817412962
+    Data4: -1338581951
+  Banks:
+  - {fileID: 3206694555944759032}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5666220392644045634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FightMusic/Fight
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Fight
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1942404122
+    data2: 2124486142
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &5686353463047066226
 MonoBehaviour:
   m_ObjectHideFlags: 0
