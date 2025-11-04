@@ -51,7 +51,7 @@ namespace Скриптерсы
         public IEnumerator DeathHandler()
         {
             _deathView.Die();
-            RuntimeManager.PlayOneShot("event:/SFX/InGame/Enemy/e_Death", transform.position);
+            RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_Death", transform.position);
             yield return new WaitForSeconds(1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

@@ -15,6 +15,9 @@ namespace Скриптерсы
         
         public void Awake()
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
+
+            
             _deathView.Respawn();
             
             if(_saveRepository.PlayerSave is null)
