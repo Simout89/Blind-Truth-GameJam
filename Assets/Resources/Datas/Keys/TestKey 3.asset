@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: TestKey 3
   m_EditorClassIdentifier: "Assembly-CSharp::\u0421\u043A\u0440\u0438\u043F\u0442\u0435\u0440\u0441\u044B.Datas.KeyItemData"
   <Name>k__BackingField: TestKey 1
+  <PickUpSound>k__BackingField: event:/SFX/InGame/Player/VoiceLines/p_Emblem
