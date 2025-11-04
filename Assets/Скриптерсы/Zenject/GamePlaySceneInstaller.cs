@@ -20,6 +20,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<CheckPointManager>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<DeathView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<PauseView>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<SubtitlesView>().FromComponentsInHierarchy().AsSingle();
 
         }
     }

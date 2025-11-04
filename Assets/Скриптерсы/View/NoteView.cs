@@ -13,6 +13,8 @@ namespace Скриптерсы.View
         [SerializeField] private TMP_Text _text;
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private QuickTimeEvent _quickTimeEvent;
+
+        [Inject] private SubtitlesView _subtitlesView;
         private NoteData lastData;
 
         private void Awake()
@@ -34,6 +36,9 @@ namespace Скриптерсы.View
             _gameStateManager.ChangeState(GameStates.Play);
             if(lastData != null && lastData.soundAfterClose != "")
                 RuntimeManager.PlayOneShot(lastData.soundAfterClose);
+            
+            if(lastData != null && lastData.textOnSubtitles != "")
+                _subtitlesView.ShowText(lastData.textOnSubtitles);
 
             if (lastData != null && lastData.startQTEAfterClose)
             {

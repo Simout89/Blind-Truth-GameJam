@@ -7,6 +7,7 @@ namespace Скриптерсы.Datas
     {
         [field: SerializeField][field: TextArea] public string text { get; private set; }
         [field: SerializeField] public string soundAfterClose { get; private set; }
+        [field: SerializeField] public string textOnSubtitles { get; private set; }
         [field: SerializeField] public bool startQTEAfterClose { get; private set; }
     }
 }

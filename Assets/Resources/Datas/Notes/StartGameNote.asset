@@ -54,3 +54,5 @@ MonoBehaviour:
     \u0442\u0440\u0435\u0432\u043E\u0433\u043E\u0439,\r\n\u0442\u0432\u043E\u0439
     \u043E\u0442\u0435\u0446, \u041B\u0430\u0439.\r\n\n<i><color=red><s>\u21161</s></color></i>\r\n<i><color=red><s>ASCII</s></color></i>"
   <soundAfterClose>k__BackingField: event:/SFX/InGame/Player/VoiceLines/p_Start
+  <textOnSubtitles>k__BackingField: 
+  <startQTEAfterClose>k__BackingField: 0

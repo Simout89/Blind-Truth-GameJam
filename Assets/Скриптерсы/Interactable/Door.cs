@@ -37,7 +37,7 @@ namespace Скриптерсы.Interactable
                 if (usePosition)
                     transform.DOMove(initialPosition + positionOffset, openDuration).SetEase(Ease.InOutSine);
                 if(OpenSoundEvent != "")
-                    RuntimeManager.PlayOneShot(OpenSoundEvent);
+                    RuntimeManager.PlayOneShot(OpenSoundEvent, transform.position);
 
                 isOpen = true;
             }
@@ -52,7 +52,7 @@ namespace Скриптерсы.Interactable
                 if (usePosition)
                     transform.DOMove(initialPosition, closeDuration).SetEase(Ease.InOutSine);
                 if(CloseSoundEvent != "")
-                    RuntimeManager.PlayOneShot(CloseSoundEvent);
+                    RuntimeManager.PlayOneShot(CloseSoundEvent, transform.position);
 
                 isOpen = false;
             }
