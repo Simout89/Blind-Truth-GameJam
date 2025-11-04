@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FMODUnity;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -30,11 +31,13 @@ namespace Скриптерсы.View
 
         public void Open()
         {
+            RuntimeManager.StudioSystem.setParameterByName("Pause", 1);
             pauseMenu.SetActive(true);
         }
 
         public void Hide()
         {
+            RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
             pauseMenu.SetActive(false);
 
             foreach (var VARIABLE in pages)
