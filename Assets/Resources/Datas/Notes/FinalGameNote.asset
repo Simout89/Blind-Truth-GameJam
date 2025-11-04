@@ -77,3 +77,4 @@ MonoBehaviour:
     \u0411\u043E\u0433\u043E\u043C\u2026 \r\n\n<i><color=red><s>\u21165</s></color></i>\r\n<i><color=red><s>208
     189 208 184 208 181</s></color></i>\r\n"
   <soundAfterClose>k__BackingField: event:/SFX/InGame/Player/VoiceLines/p_Emblem
+  <startQTEAfterClose>k__BackingField: 1

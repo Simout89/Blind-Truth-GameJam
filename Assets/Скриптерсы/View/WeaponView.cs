@@ -9,6 +9,7 @@ namespace Скриптерсы.View
     {
         [Inject] private WeaponCombatController _weaponCombatController;
         [SerializeField] private TMP_Text _tmpText;
+        [Inject] private SaveRepository _saveRepository;
 
         private void OnEnable()
         {
@@ -31,7 +32,10 @@ namespace Скриптерсы.View
         private void Awake()
         {
             _tmpText.text = $"{0}/{0}";
-            _tmpText.gameObject.SetActive(false);
+            
+            if(_saveRepository.PlayerSave != null && _saveRepository.PlayerSave.haveWeapon)
+                _tmpText.gameObject.SetActive(true);
+            // _tmpText.gameObject.SetActive(false);
         }
 
         private void HandleAmmoChanged(AmmoInfo obj)

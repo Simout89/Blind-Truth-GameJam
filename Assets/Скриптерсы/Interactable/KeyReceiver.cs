@@ -15,6 +15,8 @@ namespace Скриптерсы.Interactable
         [SerializeField] private string CorrectEvent;
         [SerializeField] private string AlreadySolved;
         private bool isSolved = false;
+        [SerializeField] private bool deleteAfterSolved;
+        
         public ClickResult Click()
         {
             if (isSolved)
@@ -46,6 +48,12 @@ namespace Скриптерсы.Interactable
             OnSolved?.Invoke();
             if(CorrectEvent != "")
                 RuntimeManager.PlayOneShot(CorrectEvent);
+
+            if (deleteAfterSolved)
+            {
+                Destroy(gameObject);
+                return new ClickResult(true, false);
+            }
             return new ClickResult(false, false);
         }
     }

@@ -1,16 +1,21 @@
 ﻿using System;
+using System.Collections;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
+using Скриптерсы.View;
 
 namespace Скриптерсы
 {
     public class PlayerHealth: MonoBehaviour, IDamageable, IHealable
     {
         [field: SerializeField] public CharacterController _characterController { get; private set; }
+        [Inject] private DeathView _deathView;
         public event Action<float> OnHealthChanged;
         private float currentHealth;
         public float CurrentHealth => currentHealth;
+        private Coroutine death;
 
         private void Awake()
         {
@@ -30,7 +35,8 @@ namespace Скриптерсы
             {
                 Debug.Log("Смерть");
 
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                if(death == null)
+                    death =StartCoroutine(DeathHandler());
             }
         }
 
@@ -40,6 +46,14 @@ namespace Скриптерсы
             OnHealthChanged?.Invoke(amount);
 
             Debug.Log($"Захилился: {currentHealth}");
+        }
+
+        public IEnumerator DeathHandler()
+        {
+            _deathView.Die();
+            RuntimeManager.PlayOneShot("event:/SFX/InGame/Enemy/e_Death", transform.position);
+            yield return new WaitForSeconds(1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

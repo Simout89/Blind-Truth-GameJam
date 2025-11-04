@@ -12,6 +12,7 @@ namespace Скриптерсы.View
         [SerializeField] private GameObject note;
         [SerializeField] private TMP_Text _text;
         [Inject] private GameStateManager _gameStateManager;
+        [Inject] private QuickTimeEvent _quickTimeEvent;
         private NoteData lastData;
 
         private void Awake()
@@ -33,6 +34,11 @@ namespace Скриптерсы.View
             _gameStateManager.ChangeState(GameStates.Play);
             if(lastData != null && lastData.soundAfterClose != "")
                 RuntimeManager.PlayOneShot(lastData.soundAfterClose);
+
+            if (lastData != null && lastData.startQTEAfterClose)
+            {
+                _quickTimeEvent.StartQTE();
+            }
         }
     }
 }
