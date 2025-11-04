@@ -78,6 +78,7 @@ namespace Скриптерсы
                 qteFail = null;
             }
             OnDone?.Invoke();
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameFinal", 1);
 
             qte = null;
