@@ -78,6 +78,14 @@ namespace Скриптерсы
             return Vector3.up * _verticalVelocity * Time.deltaTime;
         }
 
+        public void Teleport(Vector3 position)
+        {
+            _characterController.enabled = false;
+            transform.position = position;
+            _characterController.enabled = true;
+            _verticalVelocity = 0f;
+        }
+
         public void Enable()
         {
             enable = true;

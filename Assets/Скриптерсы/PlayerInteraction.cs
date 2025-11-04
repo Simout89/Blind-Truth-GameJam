@@ -4,12 +4,14 @@ using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Скриптерсы.Datas;
+using Скриптерсы.Enemy;
 
 namespace Скриптерсы
 {
     public class PlayerInteraction : MonoBehaviour
     {
         [SerializeField] private CharacterController _characterController;
+        [SerializeField] private TriggerDetector _triggerDetector; 
         public event Action OnClickableEnter;
         public event Action OnClickableExit;
 
@@ -22,42 +24,28 @@ namespace Скриптерсы
         {
             _characterController._inputService.InputSystemActions.Player.Interact.performed += HandlePerformed;
             _characterController._inputService.InputSystemActions.Player.Interact.canceled += HandleCanceled;
+
+            _triggerDetector.onTriggerEntered += HandleTriggerEnter;
+            _triggerDetector.onTriggerExited += HandleExit;
         }
 
-        private void OnDisable()
+        private void HandleExit(Collider other)
         {
-            _characterController._inputService.InputSystemActions.Player.Interact.performed -= HandlePerformed;
-            _characterController._inputService.InputSystemActions.Player.Interact.canceled -= HandleCanceled;
-        }
-
-        private void HandlePerformed(InputAction.CallbackContext obj)
-        {
-            if (!enable) return;
-
-            // Чистим список от уничтоженных объектов
-            _clickables.RemoveAll(c => c == null || ((MonoBehaviour)c) == null);
-
-            if (_clickables.Count == 0) return;
-
-            var clickable = _clickables[0];
-            if (clickable == null) return; // ещё одна защита
-
-            var info = clickable.Click();
-            if(info.playPickUpSound)
-                RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_PickUp");
-
-            if (info.hideClickableView)
+            if (other.TryGetComponent<IHighlightable>(out var highlightable))
+            {
+                highlightable.RemoveHighlight();
                 OnClickableExit?.Invoke();
+            }
+
+            if (other.TryGetComponent<IClickable>(out var clickable))
+            {
+                _clickables.Remove(clickable);
+            }
+
+            Debug.Log($"Exited: {other.name}");
         }
 
-        public void AddKey(KeyItemData keyItemData)
-        {
-            _keyItemDatas.Add(keyItemData);
-        }
-
-        private void HandleCanceled(InputAction.CallbackContext obj) { }
-
-        private void OnTriggerEnter(Collider other)
+        private void HandleTriggerEnter(Collider other)
         {
             if (other.TryGetComponent<IHighlightable>(out var highlightable))
             {
@@ -74,21 +62,66 @@ namespace Скриптерсы
             Debug.Log($"Entered: {other.name}");
         }
 
-        private void OnTriggerExit(Collider other)
+        private void OnDisable()
         {
-            if (other.TryGetComponent<IHighlightable>(out var highlightable))
-            {
-                highlightable.RemoveHighlight();
-                OnClickableExit?.Invoke();
-            }
-
-            if (other.TryGetComponent<IClickable>(out var clickable))
-            {
-                _clickables.Remove(clickable);
-            }
-
-            Debug.Log($"Exited: {other.name}");
+            _characterController._inputService.InputSystemActions.Player.Interact.performed -= HandlePerformed;
+            _characterController._inputService.InputSystemActions.Player.Interact.canceled -= HandleCanceled;
+            
+            _triggerDetector.onTriggerEntered -= HandleTriggerEnter;
+            _triggerDetector.onTriggerExited -= HandleExit;
         }
+
+        private void HandlePerformed(InputAction.CallbackContext obj)
+        {
+            if (!enable) return;
+
+            // Чистим список от уничтоженных объектов
+            _clickables.RemoveAll(c => c == null || ((MonoBehaviour)c) == null);
+
+            if (_clickables.Count == 0) return;
+
+            // Находим ближайший объект
+            var clickable = GetClosestClickable();
+            if (clickable == null) return;
+
+            var info = clickable.Click();
+            if(info.playPickUpSound)
+                RuntimeManager.PlayOneShot("event:/SFX/InGame/Player/p_PickUp");
+
+            if (info.hideClickableView)
+                OnClickableExit?.Invoke();
+        }
+
+        private IClickable GetClosestClickable()
+        {
+            if (_clickables.Count == 0) return null;
+
+            IClickable closest = null;
+            float minDistance = float.MaxValue;
+
+            foreach (var clickable in _clickables)
+            {
+                if (clickable == null) continue;
+
+                var clickableTransform = ((MonoBehaviour)clickable).transform;
+                float distance = Vector3.Distance(transform.position, clickableTransform.position);
+
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closest = clickable;
+                }
+            }
+
+            return closest;
+        }
+
+        public void AddKey(KeyItemData keyItemData)
+        {
+            _keyItemDatas.Add(keyItemData);
+        }
+
+        private void HandleCanceled(InputAction.CallbackContext obj) { }
 
         public void Enable() => enable = true;
         public void Disable() => enable = false;

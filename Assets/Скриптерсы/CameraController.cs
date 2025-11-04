@@ -10,6 +10,7 @@ namespace Скриптерсы
         [SerializeField] private CinemachineCamera _camera;
 
         [SerializeField] private CinemachinePanTilt _panTilt;
+        public CinemachinePanTilt CinemachinePanTilt => _panTilt;
         
         public void FovFade(float additionFov, float fadeInDuration, float fadeOutDuration)
         {
@@ -53,6 +54,11 @@ namespace Скриптерсы
                 x => _panTilt.PanAxis.Value = x,
                 targetPan,
                 duration);
+        }
+
+        public void SetPanTilt(float tillit)
+        {
+            _panTilt.PanAxis.Value = tillit;
         }
         
         public void Enable()

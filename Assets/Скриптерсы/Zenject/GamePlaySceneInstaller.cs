@@ -17,6 +17,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<QuickTimeEventView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<CharacterController>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<PursuitHandler>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<CheckPointManager>().FromComponentsInHierarchy().AsSingle();
 
         }
     }

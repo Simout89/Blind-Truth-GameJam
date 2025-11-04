@@ -25,7 +25,7 @@ public class WeaponCombatController : MonoBehaviour
     [Inject] private CameraController _cameraController;
 
     private bool enable = true;
-    private bool haveWeapon = false;
+    public bool HaveWeapon { get; private set; } = false;
     private bool isReloading = false;
 
     public event Action<AmmoInfo> OnAmmoChanged;
@@ -52,16 +52,21 @@ public class WeaponCombatController : MonoBehaviour
     {
         if(!enable)
             return;
-        if(!haveWeapon)
+        if(!HaveWeapon)
             return;
         Reload();
+    }
+
+    public int GetAmmo()
+    {
+        return AmmoCountInClip + TotalAmmo;
     }
 
     private void HandleAttack(InputAction.CallbackContext obj)
     {
         if(!enable)
             return;
-        if(!haveWeapon)
+        if(!HaveWeapon)
             return;
         
         TryShoot();
@@ -75,7 +80,7 @@ public class WeaponCombatController : MonoBehaviour
 
     public void Reload()
     {
-        if(!haveWeapon)
+        if(!HaveWeapon)
             return;
         
         if (isReloading)
@@ -194,7 +199,7 @@ public class WeaponCombatController : MonoBehaviour
 
     public void PickUpWeapon()
     {
-        haveWeapon = true;
+        HaveWeapon = true;
         _animator.SetTrigger("PickUp");
         OnWeaponPickUp?.Invoke();
     }
