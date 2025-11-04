@@ -8,13 +8,13 @@ public class LevelTrigger : MonoBehaviour
 
     private string _player = "Player";
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == _player)
             OnEnterEvent?.Invoke();
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit(Collider collision)
     {
         if (collision.tag == _player)
             OnExitEvent?.Invoke();
