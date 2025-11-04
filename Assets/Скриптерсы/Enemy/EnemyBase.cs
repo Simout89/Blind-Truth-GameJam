@@ -23,12 +23,22 @@ namespace Скриптерсы.Enemy
         [SerializeField] public Animator Animator;
         [SerializeField] private float footstepInterval = 0.3f;
         [SerializeField] private float minStepSpeed = 1f;
+        
+        [Header("FOV Settings")]
+        [SerializeField] private float viewAngle = 90f;
+        [SerializeField] private float viewDistance = 15f;
+        [SerializeField] private bool showFOVGizmos = true;
+        [SerializeField] private Color fovColor = new Color(1f, 0f, 0f, 0.3f);
+        [SerializeField] private Color detectionColor = new Color(0f, 1f, 0f, 0.5f);
+        [SerializeField] private int fovResolution = 20;
+        
         private TimedInvoker stepSoundInvoker;
         public Transform PlayerTransform { get; private set; }
 
         private Fsm _fsm;
 
         private Coroutine detectionCoroutine;
+        private bool isPlayerInFOV = false;
 
         private void Awake()
         {
@@ -93,6 +103,7 @@ namespace Скриптерсы.Enemy
             {
                 StopCoroutine(detectionCoroutine);
                 detectionCoroutine = null;
+                isPlayerInFOV = false;
             }
         }
 
@@ -124,15 +135,40 @@ namespace Скриптерсы.Enemy
             _fsm.Update();
         }
 
+        private bool IsPlayerInFOV()
+        {
+            if (PlayerTransform == null) return false;
+
+            Vector3 directionToPlayer = (PlayerTransform.position - _triggerDetector.transform.position).normalized;
+            float distanceToPlayer = Vector3.Distance(_triggerDetector.transform.position, PlayerTransform.position);
+
+            // Проверка дистанции
+            if (distanceToPlayer > viewDistance) return false;
+
+            // Проверка угла обзора
+            float angleToPlayer = Vector3.Angle(_triggerDetector.transform.forward, directionToPlayer);
+            if (angleToPlayer > viewAngle / 2f) return false;
+
+            return true;
+        }
+
         private IEnumerator PlayerDetection()
         {
             while (true)
             {
+                if (!IsPlayerInFOV())
+                {
+                    isPlayerInFOV = false;
+                    yield return null;
+                    continue;
+                }
+
                 Vector3 direction = (PlayerTransform.position - _triggerDetector.transform.position).normalized;
         
-                if (Physics.Raycast(_triggerDetector.transform.position, direction, out RaycastHit hit, 100, _layerMask, QueryTriggerInteraction.Ignore) &&
+                if (Physics.Raycast(_triggerDetector.transform.position, direction, out RaycastHit hit, viewDistance, _layerMask, QueryTriggerInteraction.Ignore) &&
                     hit.collider.GetComponent<CharacterController>())
                 {
+                    isPlayerInFOV = true;
                     float distanceFromAnchor = Vector3.Distance(PlayerTransform.position, anchors[currentPoint].position);
             
                     if (_fsm.CurrentState.GetType() == typeof(PatrolState) && 
@@ -146,6 +182,10 @@ namespace Скриптерсы.Enemy
                             _fsm.ChangeState<PursuitState>();
                         }
                     }
+                }
+                else
+                {
+                    isPlayerInFOV = false;
                 }
         
                 yield return null;
@@ -172,7 +212,57 @@ namespace Скриптерсы.Enemy
 
         private void OnDrawGizmos()
         {
-            Gizmos.DrawSphere(attackZone.position, EnemyData.AttackZoneRadius);
+            // Рисуем зону атаки
+            if (attackZone != null && EnemyData != null)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireSphere(attackZone.position, EnemyData.AttackZoneRadius);
+            }
+
+            // Рисуем FOV
+            if (showFOVGizmos && _triggerDetector != null)
+            {
+                DrawFOV();
+            }
+        }
+
+        private void DrawFOV()
+        {
+            Vector3 origin = _triggerDetector.transform.position;
+            Vector3 forward = _triggerDetector.transform.forward;
+
+            // Цвет зависит от того, видит ли враг игрока
+            Gizmos.color = isPlayerInFOV ? detectionColor : fovColor;
+
+            // Рисуем линии границ FOV
+            Vector3 leftBoundary = Quaternion.Euler(0, -viewAngle / 2f, 0) * forward * viewDistance;
+            Vector3 rightBoundary = Quaternion.Euler(0, viewAngle / 2f, 0) * forward * viewDistance;
+
+            Gizmos.DrawLine(origin, origin + leftBoundary);
+            Gizmos.DrawLine(origin, origin + rightBoundary);
+
+            // Рисуем дугу FOV
+            Vector3 previousPoint = origin + leftBoundary;
+            for (int i = 1; i <= fovResolution; i++)
+            {
+                float angle = -viewAngle / 2f + (viewAngle / fovResolution) * i;
+                Vector3 direction = Quaternion.Euler(0, angle, 0) * forward;
+                Vector3 point = origin + direction * viewDistance;
+                
+                Gizmos.DrawLine(previousPoint, point);
+                previousPoint = point;
+            }
+
+            // Линия к центру FOV
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(origin, origin + forward * viewDistance);
+
+            // Если игрок в зоне видимости, рисуем линию к нему
+            if (isPlayerInFOV && PlayerTransform != null)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawLine(origin, PlayerTransform.position);
+            }
         }
 
         public Transform GetContainer() => container;
