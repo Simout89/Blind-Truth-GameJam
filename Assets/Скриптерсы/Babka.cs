@@ -25,7 +25,7 @@ namespace Скриптерсы
 
         private void Awake()
         {
-            _enemyHealth.Init(1);
+            _enemyHealth.Init(2);
         }
     }
 }
