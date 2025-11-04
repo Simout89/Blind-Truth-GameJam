@@ -14,6 +14,10 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<SaveRepository>()
                 .AsSingle()
                 .NonLazy();
+            
+            Container.BindInterfacesAndSelfTo<SettingService>()
+                .AsSingle()
+                .NonLazy();
         }
     }
 }

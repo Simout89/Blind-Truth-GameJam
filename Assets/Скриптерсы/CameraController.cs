@@ -2,6 +2,8 @@
 using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
+using Zenject;
+using Скриптерсы.Services;
 
 namespace Скриптерсы
 {
@@ -10,8 +12,28 @@ namespace Скриптерсы
         [SerializeField] private CinemachineCamera _camera;
 
         [SerializeField] private CinemachinePanTilt _panTilt;
+        [SerializeField] private CinemachineInputAxisController _inputAxisController;
+        
+        [Inject] private SettingService _settingService;
         public CinemachinePanTilt CinemachinePanTilt => _panTilt;
         
+        
+        private void OnEnable()
+        {
+            _settingService.OnSettingsChanged += HandleSettingsChanged;
+        }
+        
+        private void OnDisable()
+        {
+            _settingService.OnSettingsChanged -= HandleSettingsChanged;
+        }
+
+        private void HandleSettingsChanged()
+        {
+            _inputAxisController.Controllers[0].Input.Gain = _settingService.MouseSensitivity * 1;
+            _inputAxisController.Controllers[1].Input.Gain = _settingService.MouseSensitivity * -1;
+        }
+
         public void FovFade(float additionFov, float fadeInDuration, float fadeOutDuration)
         {
             DOTween.Kill(_camera);
