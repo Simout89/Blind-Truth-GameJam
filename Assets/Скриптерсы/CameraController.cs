@@ -10,6 +10,7 @@ namespace Скриптерсы
     public class CameraController: MonoBehaviour
     {
         [SerializeField] private CinemachineCamera _camera;
+        public Transform CameraTransform => _camera.transform;
 
         [SerializeField] private CinemachinePanTilt _panTilt;
         [SerializeField] private CinemachineInputAxisController _inputAxisController;
