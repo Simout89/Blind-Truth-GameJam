@@ -2270,8 +2270,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7bcd32ac889fc054aa4fb151bc6b974d, type: 2}
+  m_sharedMaterial: {fileID: -750205716388841604, guid: 7bcd32ac889fc054aa4fb151bc6b974d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4226,7 +4226,7 @@ MonoBehaviour:
   _text: {fileID: 2163261027460193129}
   _canvasGroup: {fileID: 4458757070190190480}
   fadeDuration: 1
-  visibleAfterType: 3
+  visibleAfterType: 2
   charDelay: 0.05
 --- !u!1 &3000349508618646390
 GameObject:

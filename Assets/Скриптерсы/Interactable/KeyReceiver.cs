@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
 using Скриптерсы.Datas;
+using Скриптерсы.View;
 
 namespace Скриптерсы.Interactable
 {
@@ -16,6 +17,10 @@ namespace Скриптерсы.Interactable
         [SerializeField] private string AlreadySolved;
         private bool isSolved = false;
         [SerializeField] private bool deleteAfterSolved;
+
+        [SerializeField] private string subtitlesTextUnCorrect;
+
+        [Inject] private SubtitlesView _subtitlesView;
         
         public ClickResult Click()
         {
@@ -41,6 +46,12 @@ namespace Скриптерсы.Interactable
                 {
                     if(UnCorrectEvent != "")
                         RuntimeManager.PlayOneShot(UnCorrectEvent);
+
+                    if (subtitlesTextUnCorrect != "")
+                    {
+                        _subtitlesView.ShowText(subtitlesTextUnCorrect);
+                    }
+                    
                     return new ClickResult(false, false);
                 }
             }
