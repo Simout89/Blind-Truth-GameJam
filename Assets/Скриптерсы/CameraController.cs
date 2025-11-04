@@ -86,11 +86,14 @@ namespace Скриптерсы
         public void Enable()
         {
             _panTilt.enabled = true;
+            _inputAxisController.enabled = true;
         }
 
         public void Disable()
         {
             _panTilt.enabled = false;
+            _inputAxisController.enabled = false;
         }
+
     }
 }
