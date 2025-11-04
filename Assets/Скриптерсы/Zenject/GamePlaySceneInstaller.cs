@@ -19,6 +19,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<PursuitHandler>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<CheckPointManager>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<DeathView>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<PauseView>().FromComponentsInHierarchy().AsSingle();
 
         }
     }

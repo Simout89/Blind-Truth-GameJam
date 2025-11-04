@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 using Скриптерсы.Datas;
 using Скриптерсы.View;
@@ -9,12 +10,17 @@ namespace Скриптерсы.Interactable
     {
         [SerializeField] private NoteData _noteData;
         [Inject] private NoteView _noteView;
+
+        [SerializeField] private bool hideClickableViewAfterUse;
+        [SerializeField] private UnityEvent clickEvent;
         
         public ClickResult Click()
         {
             _noteView.TryShowNote(_noteData);
+            
+            clickEvent?.Invoke();
 
-            return new ClickResult(false);
+            return new ClickResult(hideClickableViewAfterUse);
         }
 
         public override void Highlight()

@@ -15,11 +15,12 @@ namespace Скриптерсы
         
         public void Awake()
         {
+            _deathView.Respawn();
+            
             if(_saveRepository.PlayerSave is null)
             {
                 return;
             }
-            _deathView.Respawn();
             
             _characterController.Teleport(_saveRepository.PlayerSave.position);
             _cameraController.SetPanTilt(_saveRepository.PlayerSave.panTilt);

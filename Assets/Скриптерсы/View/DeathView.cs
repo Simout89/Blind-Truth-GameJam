@@ -16,7 +16,7 @@ namespace Скриптерсы.View
         {
             image.alpha = 1;
             
-            image.DOFade(0, 1);
+            image.DOFade(0, 2);
         }
     }
 }
