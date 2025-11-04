@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 3206694555944759032}
   IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -409,7 +409,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638978625176660877
+  lastModified: 638978691870291416
   FileSizes:
   - Name: 
     Value: 3218
@@ -667,7 +667,7 @@ MonoBehaviour:
   - {fileID: 3206694555944759032}
   StringsBanks:
   - {fileID: -4348394102023048894}
-  cacheTime: 638978625176660877
+  cacheTime: 638978691870291416
   cacheVersion: 131633
 --- !u!114 &40438198268885274
 MonoBehaviour:
@@ -1109,7 +1109,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638978625176540703
+  lastModified: 638978691870161490
   FileSizes: []
   Exists: 1
 --- !u!114 &3976135349645162472

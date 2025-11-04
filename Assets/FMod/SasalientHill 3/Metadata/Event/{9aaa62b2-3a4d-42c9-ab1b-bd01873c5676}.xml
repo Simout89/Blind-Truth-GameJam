@@ -5,7 +5,7 @@
 			<value>pr_KeyOpen</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{1a430e6b-c128-4195-b203-d1a8a88f8693}</destination>
@@ -99,7 +99,6 @@
 	<object class="MixerBusEffectChain" id="{d674760b-901b-45da-816f-57067a8b7bd6}">
 		<relationship name="effects">
 			<destination>{177505c8-2c58-42fa-9e2e-bbe9b2255b10}</destination>
-			<destination>{96169a2f-410c-4af3-9c4c-002cafe9158c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9de26d9f-5482-4b2e-81c1-4b540ed2621a}" />
@@ -110,5 +109,4 @@
 	</object>
 	<object class="MixerBusFader" id="{94b110eb-41e8-4425-b994-6d0931c152ff}" />
 	<object class="MixerBusFader" id="{177505c8-2c58-42fa-9e2e-bbe9b2255b10}" />
-	<object class="SpatialiserEffect" id="{96169a2f-410c-4af3-9c4c-002cafe9158c}" />
 </objects>
