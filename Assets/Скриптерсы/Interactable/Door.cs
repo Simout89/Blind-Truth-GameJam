@@ -12,9 +12,11 @@ namespace Скриптерсы.Interactable
         [SerializeField] private Vector3 positionOffset;
         [Header("Настройки")]
         [SerializeField] private float openDuration = 1f; // скорость открытия
+        [SerializeField] private float closeDuration = 1f; // скорость закрытия
         [SerializeField] private bool useRotation = true; // включить поворот
         [SerializeField] private bool usePosition = false; // включить движение
         [SerializeField] private string OpenSoundEvent;
+        [SerializeField] private string CloseSoundEvent;
 
         private Vector3 initialPosition;
         private Vector3 initialRotation;
@@ -37,9 +39,31 @@ namespace Скриптерсы.Interactable
                 if(OpenSoundEvent != "")
                     RuntimeManager.PlayOneShot(OpenSoundEvent);
 
-
                 isOpen = true;
             }
+        }
+
+        public void Close()
+        {
+            if (isOpen)
+            {
+                if (useRotation)
+                    transform.DORotate(initialRotation, closeDuration).SetEase(Ease.InOutSine);
+                if (usePosition)
+                    transform.DOMove(initialPosition, closeDuration).SetEase(Ease.InOutSine);
+                if(CloseSoundEvent != "")
+                    RuntimeManager.PlayOneShot(CloseSoundEvent);
+
+                isOpen = false;
+            }
+        }
+
+        public void Toggle()
+        {
+            if (isOpen)
+                Close();
+            else
+                Open();
         }
     }
 }
