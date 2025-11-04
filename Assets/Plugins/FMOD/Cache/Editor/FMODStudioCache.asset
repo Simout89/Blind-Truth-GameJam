@@ -105,10 +105,35 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 2515115800601997759}
   MinDistance: 1
   MaxDistance: 20
   Length: 70291
+--- !u!114 &-7680049957417550018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1SoundScape/Pause
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Pause
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2727878989
+    data2: 119848647
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-7644442734879554043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +236,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6566004194619154479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FightMusic/Pause
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Pause
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2727878989
+    data2: 119848647
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-6555693984151700806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,10 +409,10 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638978593626226325
+  lastModified: 638978609246733692
   FileSizes:
   - Name: 
-    Value: 3172
+    Value: 3218
   Exists: 1
 --- !u!114 &-2295204205336815708
 MonoBehaviour:
@@ -613,11 +662,12 @@ MonoBehaviour:
   - {fileID: 6147592906114050055}
   - {fileID: 7605515880478567779}
   - {fileID: -7644442734879554043}
+  - {fileID: 7459105129345899350}
   MasterBanks:
   - {fileID: 3206694555944759032}
   StringsBanks:
   - {fileID: -4348394102023048894}
-  cacheTime: 638978593626226325
+  cacheTime: 638978609246733692
   cacheVersion: 131633
 --- !u!114 &40438198268885274
 MonoBehaviour:
@@ -993,6 +1043,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2515115800601997759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainMenu/Pause
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Pause
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2727878989
+    data2: 119848647
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &3036449352417802420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,7 +1109,7 @@ MonoBehaviour:
   Path: Assets/FMod/SasalientHill 3/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638978593626106384
+  lastModified: 638978609246573774
   FileSizes: []
   Exists: 1
 --- !u!114 &3976135349645162472
@@ -1117,6 +1191,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 5666220392644045634}
+  - {fileID: -6566004194619154479}
   MinDistance: 1
   MaxDistance: 20
   Length: 22325
@@ -1201,6 +1276,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: -6335462749340527160}
+  - {fileID: 7931897848373030417}
   MinDistance: 1
   MaxDistance: 20
   Length: 24593
@@ -1251,7 +1327,8 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -7680049957417550018}
   MinDistance: 1
   MaxDistance: 20
   Length: 242000
@@ -1546,6 +1623,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7459105129345899350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Pause
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Pause
+  StudioPath: parameter:/Pause
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2727878989
+    data2: 119848647
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &7589631615176041427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,6 +1695,30 @@ MonoBehaviour:
   ID:
     data1: 4263652125
     data2: 92706121
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &7931897848373030417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FinalGame/Pause
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Pause
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2727878989
+    data2: 119848647
   Type: 0
   IsGlobal: 1
   Labels: []
