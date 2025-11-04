@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using DG.Tweening;
 using FMOD.Studio;
 using FMODUnity;
@@ -25,11 +26,16 @@ namespace Скриптерсы
         [SerializeField] private GameObject blackScreen;
         [SerializeField] private Animator _animator;
         [SerializeField] private CinemachineImpulseSource _impulseSource;
+        [SerializeField] private CanvasGroup exitButton;
+        [SerializeField] private GameObject mouseBlink;
 
         private bool enable = false;
 
 
         private EventInstance _eventInstance;
+
+
+        private Coroutine _coroutine;
         
         
         private void OnEnable()
@@ -54,6 +60,21 @@ namespace Скриптерсы
         {
             _gameStateManager.ChangeState(GameStates.End);
             blackScreen.SetActive(true);
+
+
+            StopCoroutine(_coroutine);
+            
+            exitButton.DOFade(1, 8).SetDelay(5f).SetUpdate(true).SetEase(Ease.InOutSine);
+
+        }
+        
+        IEnumerator ToggleActive()
+        {
+            while (true)
+            {
+                mouseBlink.SetActive(!mouseBlink.activeSelf);
+                yield return new WaitForSeconds(0.3f);
+            }
         }
 
         private void Awake()
@@ -69,6 +90,8 @@ namespace Скриптерсы
             enable = true;
             _eventInstance = RuntimeManager.CreateInstance("event:/SFX/InGame/Player/p_Scream");
             _eventInstance.start();
+
+            _coroutine = StartCoroutine(ToggleActive());
             
             qteGameObject.SetActive(true);
             // Сбрасываем черные объекты при старте нового QTE

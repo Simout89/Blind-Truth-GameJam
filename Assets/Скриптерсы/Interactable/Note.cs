@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
 using Скриптерсы.Datas;
@@ -17,10 +18,18 @@ namespace Скриптерсы.Interactable
         public ClickResult Click()
         {
             _noteView.TryShowNote(_noteData);
+
+            StartCoroutine(Delay());
             
-            clickEvent?.Invoke();
 
             return new ClickResult(hideClickableViewAfterUse);
+        }
+
+        private IEnumerator Delay()
+        {
+            yield return new WaitForSeconds(3f);
+            
+            clickEvent?.Invoke();
         }
 
         public override void Highlight()

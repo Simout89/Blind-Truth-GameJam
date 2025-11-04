@@ -68,7 +68,7 @@ namespace Скриптерсы
                     case GameStates.QTE:
                     {
                         Time.timeScale = 1;
-                        Cursor.lockState = CursorLockMode.None;
+                        Cursor.lockState = CursorLockMode.Locked;
                         _cameraController.Disable();
                         _playerInteraction.Disable();
                         _weaponCombatController.HideHands();
