@@ -6,15 +6,11 @@
 https://itch.io/jam/sibgamejam-nov-2025/rate/4013482
 https://sim-out.itch.io/blind-truth
 
-
 ========================
 
-
-# Pantomime
-
-A game created in **3 days** for a game jam.
-Placed **6th** overall.
+A game created in 3 days for a game jam.
+Placed 6th overall.
 A small experiment focused on gameplay and rapid idea implementation.
 
-[https://itch.io/jam/sibgamejam-nov-2025/rate/4013482](https://itch.io/jam/sibgamejam-nov-2025/rate/4013482)
-[https://sim-out.itch.io/blind-truth](https://sim-out.itch.io/blind-truth)
+https://itch.io/jam/sibgamejam-nov-2025/rate/4013482
+https://sim-out.itch.io/blind-truth
