@@ -26,7 +26,7 @@ public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         _text = GetComponentInChildren<TextMeshProUGUI>();
         if (_text == null)
         {
-            Debug.LogError("TextMeshProUGUI не найден в дочерних объектах кнопки!");
+            Debug.LogError("TextMeshProUGUI РЅРµ РЅР°Р№РґРµРЅ РІ РґРѕС‡РµСЂРЅРёС… РѕР±СЉРµРєС‚Р°С… РєРЅРѕРїРєРё!");
             return;
         }
 
@@ -36,12 +36,12 @@ public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     private void OnDisable()
     {
-        // При отключении кнопки сбрасываем состояние
+        // РџСЂРё РѕС‚РєР»СЋС‡РµРЅРёРё РєРЅРѕРїРєРё СЃР±СЂР°СЃС‹РІР°РµРј СЃРѕСЃС‚РѕСЏРЅРёРµ
         ResetButtonState();
     }
 
     /// <summary>
-    /// Сброс масштаба и цвета текста в исходное состояние
+    /// РЎР±СЂРѕСЃ РјР°СЃС€С‚Р°Р±Р° Рё С†РІРµС‚Р° С‚РµРєСЃС‚Р° РІ РёСЃС…РѕРґРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
     /// </summary>
     public void ResetButtonState()
     {
@@ -60,13 +60,13 @@ public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         _text.rectTransform.DOKill(true);
         _text.DOKill(true);
 
-        // Масштаб
+        // РњР°СЃС€С‚Р°Р±
         _text.rectTransform.DOScale(_defaultScale * scaleMultiplier, animationDuration).SetEase(easeType);
 
-        // Цвет через TMP
+        // Р¦РІРµС‚ С‡РµСЂРµР· TMP
         _text.DOColor(Color.white, animationDuration).SetEase(easeType).OnUpdate(() =>
         {
-            _text.ForceMeshUpdate(); // гарантируем обновление цвета вершин
+            _text.ForceMeshUpdate(); // РіР°СЂР°РЅС‚РёСЂСѓРµРј РѕР±РЅРѕРІР»РµРЅРёРµ С†РІРµС‚Р° РІРµСЂС€РёРЅ
         });
 
         if (hoverSound.IsNull == false)
@@ -96,7 +96,7 @@ public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     }
 
     /// <summary>
-    /// Включить или отключить интерактивность кнопки
+    /// Р’РєР»СЋС‡РёС‚СЊ РёР»Рё РѕС‚РєР»СЋС‡РёС‚СЊ РёРЅС‚РµСЂР°РєС‚РёРІРЅРѕСЃС‚СЊ РєРЅРѕРїРєРё
     /// </summary>
     public void SetInteractable(bool value)
     {

@@ -2,26 +2,26 @@ using UnityEngine;
 
 public class InfiniteScroller : MonoBehaviour
 {
-    [Tooltip("Сегменты окружения, стоящие в ряд по оси X")]
+    [Tooltip("РЎРµРіРјРµРЅС‚С‹ РѕРєСЂСѓР¶РµРЅРёСЏ, СЃС‚РѕСЏС‰РёРµ РІ СЂСЏРґ РїРѕ РѕСЃРё X")]
     public Transform[] segments;
 
-    [Tooltip("Скорость движения фона влево")]
+    [Tooltip("РЎРєРѕСЂРѕСЃС‚СЊ РґРІРёР¶РµРЅРёСЏ С„РѕРЅР° РІР»РµРІРѕ")]
     public float scrollSpeed = 10f;
 
-    [Tooltip("Длина одного сегмента по оси X")]
+    [Tooltip("Р”Р»РёРЅР° РѕРґРЅРѕРіРѕ СЃРµРіРјРµРЅС‚Р° РїРѕ РѕСЃРё X")]
     public float segmentLength = 50f;
 
     void Update()
     {
         foreach (var seg in segments)
         {
-            // Двигаем сегмент влево
+            // Р”РІРёРіР°РµРј СЃРµРіРјРµРЅС‚ РІР»РµРІРѕ
             seg.Translate(Vector3.left * scrollSpeed * Time.deltaTime, Space.World);
 
-            // Если сегмент полностью ушёл за левый край — переносим его вперёд
+            // Р•СЃР»Рё СЃРµРіРјРµРЅС‚ РїРѕР»РЅРѕСЃС‚СЊСЋ СѓС€С‘Р» Р·Р° Р»РµРІС‹Р№ РєСЂР°Р№ вЂ” РїРµСЂРµРЅРѕСЃРёРј РµРіРѕ РІРїРµСЂС‘Рґ
             if (seg.position.x < -segmentLength)
             {
-                // Новый X = текущий X + общая длина всех сегментов
+                // РќРѕРІС‹Р№ X = С‚РµРєСѓС‰РёР№ X + РѕР±С‰Р°СЏ РґР»РёРЅР° РІСЃРµС… СЃРµРіРјРµРЅС‚РѕРІ
                 float newX = seg.position.x + segmentLength * segments.Length;
                 seg.position = new Vector3(newX, seg.position.y, seg.position.z);
             }
