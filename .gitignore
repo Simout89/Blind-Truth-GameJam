@@ -61,3 +61,24 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+/Packages/com.hauntedpsx.render-pipelines.psx
+<<<<<<< HEAD
+/fmod_editor.log
+=======
+
+/UserSettings/
+/Assets/Plugins/FMOD/Cache/**
+
+
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+
+UserSettings/EditorUserSettings.asset
+
+fmod_editor.log
+
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+UserSettings/Layouts/default-6000.dwlt
+
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
+
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
